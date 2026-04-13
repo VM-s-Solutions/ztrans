@@ -1,17 +1,28 @@
+// Filter bar
+.filter-bar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 14px;
+  flex-wrap: wrap;
+}
+
 .search-box {
   display: flex;
   align-items: center;
   gap: 8px;
+  flex: 1;
+  min-width: 240px;
   background: var(--zt-white);
   border: 1px solid var(--zt-gray-200);
   border-radius: 6px;
   padding: 8px 14px;
-  margin-bottom: 16px;
   box-shadow: var(--zt-shadow);
 
-  .material-icons {
+  > .material-icons {
     font-size: 20px;
     color: var(--zt-gray-500);
+    flex-shrink: 0;
   }
 
   input {
@@ -21,26 +32,77 @@
     font-family: Montserrat, sans-serif;
     color: var(--zt-gray-900);
     flex: 1;
+    min-width: 0;
     background: transparent;
 
     &::placeholder { color: var(--zt-gray-500); }
   }
+
+  .search-clear {
+    border: none;
+    background: transparent;
+    color: var(--zt-gray-500);
+    cursor: pointer;
+    padding: 2px;
+    display: flex;
+    align-items: center;
+    border-radius: 4px;
+
+    &:hover { background: var(--zt-gray-100); color: var(--zt-gray-700); }
+
+    .material-icons { font-size: 18px; }
+  }
 }
 
-.filter-bar {
+.sort-select {
   display: flex;
-  gap: 6px;
-  margin-bottom: 24px;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--zt-gray-500);
+  background: var(--zt-white);
+  border: 1px solid var(--zt-gray-200);
+  border-radius: 6px;
+  padding: 4px 10px 4px 14px;
+  box-shadow: var(--zt-shadow);
+
+  select {
+    border: none;
+    outline: none;
+    background: transparent;
+    font-family: Montserrat, sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    text-transform: none;
+    letter-spacing: 0;
+    color: var(--zt-gray-900);
+    padding: 6px 4px;
+    cursor: pointer;
+  }
+}
+
+// Chip row
+.chip-row {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 20px;
   flex-wrap: wrap;
 }
 
-.filter-btn {
-  padding: 8px 16px;
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 14px;
   border: 1px solid var(--zt-gray-200);
   background: var(--zt-white);
   border-radius: 20px;
   font-size: 13px;
   font-weight: 500;
+  font-family: Montserrat, sans-serif;
   color: var(--zt-gray-700);
   cursor: pointer;
   transition: all 0.15s;
@@ -54,13 +116,29 @@
     background: var(--zt-blue);
     border-color: var(--zt-blue);
     color: var(--zt-white);
+
+    .chip-count {
+      background: rgba(255, 255, 255, 0.25);
+      color: var(--zt-white);
+    }
   }
 }
 
+.chip-count {
+  font-size: 11px;
+  font-weight: 700;
+  padding: 2px 7px;
+  border-radius: 10px;
+  background: var(--zt-gray-100);
+  color: var(--zt-gray-700);
+}
+
+// Document grid
 .doc-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
   gap: 16px;
+  margin-bottom: 16px;
 }
 
 .doc-card {
@@ -93,6 +171,12 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-shrink: 0;
+}
+
+.doc-type-info {
+  min-width: 0;
+  flex: 1;
 }
 
 .doc-type-name {
@@ -118,6 +202,7 @@
   padding: 10px 12px;
   background: var(--zt-gray-50);
   border-radius: 6px;
+  flex-wrap: wrap;
 
   .material-icons {
     font-size: 16px;
@@ -164,11 +249,71 @@
   &:hover {
     background: var(--zt-blue-dark);
     border-color: var(--zt-blue-dark);
+    color: var(--zt-white);
+  }
+}
+
+// Paginator
+.paginator-wrapper {
+  background: var(--zt-white);
+  border-radius: var(--zt-radius);
+  box-shadow: var(--zt-shadow);
+  overflow: hidden;
+}
+
+::ng-deep .mat-mdc-paginator {
+  background: var(--zt-white);
+  font-family: Montserrat, sans-serif;
+}
+
+// Empty state
+.empty-state {
+  padding: 60px 24px;
+  text-align: center;
+  color: var(--zt-gray-500);
+
+  .material-icons {
+    font-size: 56px;
+    color: var(--zt-gray-300);
+    margin-bottom: 12px;
+  }
+
+  h3 {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--zt-gray-700);
+    margin: 0 0 4px 0;
+  }
+
+  p {
+    margin: 0;
+    font-size: 13px;
   }
 }
 
 @media (max-width: 768px) {
+  .filter-bar {
+    gap: 10px;
+  }
+
+  .search-box {
+    min-width: unset;
+    width: 100%;
+    flex: 1 1 100%;
+  }
+
+  .sort-select {
+    width: 100%;
+
+    select { flex: 1; }
+  }
+
   .doc-grid {
     grid-template-columns: 1fr;
+  }
+
+  .chip {
+    font-size: 12px;
+    padding: 6px 12px;
   }
 }

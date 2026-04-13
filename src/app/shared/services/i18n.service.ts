@@ -91,6 +91,18 @@ const translations: Record<string, Record<Lang, string>> = {
   'footer.tagline': { sk: 'Na cestách od 1999', fr: 'Sur les routes depuis 1999', en: 'On the road since 1999' },
   'footer.portal': { sk: 'Portál odosielateľa', fr: 'Portail expéditeur', en: 'Shipper Portal' },
   'quote.weight_placeholder': { sk: 'napr. 18,5', fr: 'ex. 18,5', en: 'e.g. 18.5' },
+  'filter.all': { sk: 'Všetky', fr: 'Tous', en: 'All' },
+  'filter.status': { sk: 'Stav', fr: 'Statut', en: 'Status' },
+  'filter.sort_by': { sk: 'Zoradiť podľa', fr: 'Trier par', en: 'Sort by' },
+  'sort.newest': { sk: 'Najnovšie', fr: 'Plus récent', en: 'Newest first' },
+  'sort.oldest': { sk: 'Najstaršie', fr: 'Plus ancien', en: 'Oldest first' },
+  'sort.shipment_id': { sk: 'ID zásielky', fr: "ID d'expédition", en: 'Shipment ID' },
+  'sort.type': { sk: 'Typ dokumentu', fr: 'Type de document', en: 'Document type' },
+  'paginator.per_page': { sk: 'na stránku', fr: 'par page', en: 'per page' },
+  'paginator.of': { sk: 'z', fr: 'sur', en: 'of' },
+  'paginator.showing': { sk: 'Zobrazené', fr: 'Affichage', en: 'Showing' },
+  'empty.no_results': { sk: 'Žiadne výsledky', fr: 'Aucun résultat', en: 'No results found' },
+  'empty.try_different': { sk: 'Skúste zmeniť filtre alebo hľadaný výraz', fr: 'Essayez d\'autres filtres ou un autre terme', en: 'Try changing filters or search term' },
 };
 
 @Injectable({ providedIn: 'root' })

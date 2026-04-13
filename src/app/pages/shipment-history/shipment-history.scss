@@ -1,8 +1,9 @@
+// Filter bar (search + dates)
 .filter-bar {
   display: flex;
-  align-items: center;
-  gap: 16px;
-  margin-bottom: 16px;
+  align-items: end;
+  gap: 12px;
+  margin-bottom: 14px;
   flex-wrap: wrap;
 }
 
@@ -11,16 +12,17 @@
   align-items: center;
   gap: 8px;
   flex: 1;
-  min-width: 200px;
+  min-width: 240px;
   background: var(--zt-white);
   border: 1px solid var(--zt-gray-200);
   border-radius: 6px;
   padding: 8px 14px;
   box-shadow: var(--zt-shadow);
 
-  .material-icons {
+  > .material-icons {
     font-size: 20px;
     color: var(--zt-gray-500);
+    flex-shrink: 0;
   }
 
   input {
@@ -30,33 +32,53 @@
     font-family: Montserrat, sans-serif;
     color: var(--zt-gray-900);
     flex: 1;
+    min-width: 0;
     background: transparent;
 
     &::placeholder { color: var(--zt-gray-500); }
+  }
+
+  .search-clear {
+    border: none;
+    background: transparent;
+    color: var(--zt-gray-500);
+    cursor: pointer;
+    padding: 2px;
+    display: flex;
+    align-items: center;
+    border-radius: 4px;
+
+    &:hover { background: var(--zt-gray-100); color: var(--zt-gray-700); }
+
+    .material-icons { font-size: 18px; }
   }
 }
 
 .date-filters {
   display: flex;
-  gap: 12px;
+  gap: 10px;
+  flex-shrink: 0;
 }
 
 .date-label {
   display: flex;
-  align-items: center;
-  gap: 6px;
-  font-size: 12px;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 11px;
   font-weight: 600;
-  color: var(--zt-gray-700);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--zt-gray-500);
 
   input {
-    padding: 7px 10px;
+    padding: 8px 12px;
     border: 1px solid var(--zt-gray-200);
     border-radius: 6px;
     font-size: 13px;
     font-family: Montserrat, sans-serif;
     color: var(--zt-gray-900);
     background: var(--zt-white);
+    min-width: 140px;
 
     &:focus {
       outline: none;
@@ -65,13 +87,69 @@
   }
 }
 
+// Status chips
+.chip-row {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 14px;
+  border: 1px solid var(--zt-gray-200);
+  background: var(--zt-white);
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 500;
+  font-family: Montserrat, sans-serif;
+  color: var(--zt-gray-700);
+  cursor: pointer;
+  transition: all 0.15s;
+
+  &:hover {
+    border-color: var(--zt-blue);
+    color: var(--zt-blue);
+  }
+
+  &.active {
+    background: var(--zt-blue);
+    border-color: var(--zt-blue);
+    color: var(--zt-white);
+
+    .chip-count {
+      background: rgba(255, 255, 255, 0.25);
+      color: var(--zt-white);
+    }
+  }
+}
+
+.chip-count {
+  font-size: 11px;
+  font-weight: 700;
+  padding: 2px 7px;
+  border-radius: 10px;
+  background: var(--zt-gray-100);
+  color: var(--zt-gray-700);
+}
+
+// Table
 .table-card {
   padding: 0;
   overflow: hidden;
 }
 
+.table-scroll {
+  width: 100%;
+  overflow-x: auto;
+}
+
 .history-table {
   width: 100%;
+  min-width: 700px;
 
   th.mat-mdc-header-cell {
     font-size: 11px;
@@ -91,7 +169,7 @@
     border-bottom: 1px solid var(--zt-gray-100);
   }
 
-  tr.mat-mdc-row:hover {
+  tr.data-row:hover {
     background: var(--zt-gray-50);
   }
 }
@@ -100,6 +178,7 @@
   font-weight: 600;
   color: var(--zt-dark);
   text-decoration: none;
+  white-space: nowrap;
 
   &:hover {
     color: var(--zt-blue);
@@ -107,38 +186,76 @@
   }
 }
 
+// Paginator
+::ng-deep .mat-mdc-paginator {
+  background: var(--zt-gray-50);
+  border-top: 1px solid var(--zt-gray-200);
+  font-family: Montserrat, sans-serif;
+}
+
+// Empty state
+.empty-state {
+  padding: 60px 24px;
+  text-align: center;
+  color: var(--zt-gray-500);
+
+  .material-icons {
+    font-size: 56px;
+    color: var(--zt-gray-300);
+    margin-bottom: 12px;
+  }
+
+  h3 {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--zt-gray-700);
+    margin: 0 0 4px 0;
+  }
+
+  p {
+    margin: 0;
+    font-size: 13px;
+  }
+}
+
 @media (max-width: 768px) {
   .filter-bar {
-    flex-direction: column;
     gap: 10px;
   }
 
   .search-box {
     min-width: unset;
     width: 100%;
+    flex: 1 1 100%;
   }
 
   .date-filters {
     width: 100%;
-    flex-wrap: wrap;
+    gap: 8px;
   }
 
   .date-label {
     flex: 1;
-    min-width: 120px;
+    min-width: 0;
 
-    input { width: 100%; }
+    input {
+      width: 100%;
+      min-width: 0;
+      box-sizing: border-box;
+    }
   }
 
   .history-table {
-    display: block;
-    overflow-x: auto;
-
     th.mat-mdc-header-cell,
     td.mat-mdc-cell {
       padding: 10px 12px;
       font-size: 12px;
       white-space: nowrap;
     }
+  }
+
+  .chip {
+    font-size: 12px;
+    padding: 6px 12px;
   }
 }

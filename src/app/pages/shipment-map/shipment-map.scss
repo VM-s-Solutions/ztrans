@@ -27,7 +27,7 @@
   align-items: center;
   justify-content: center;
   gap: 8px;
-  width: 100%;
+  width: auto;
   padding: 10px;
   margin-bottom: 16px;
   background: var(--zt-yellow);
@@ -208,19 +208,23 @@
 @media (max-width: 768px) {
   .map-page {
     flex-direction: column;
+    height: auto;
+    min-height: calc(100vh - 56px);
   }
 
   .map-container {
-    height: 50vh;
-    min-height: 250px;
+    height: 55vh;
+    min-height: 300px;
+    flex: none;
   }
 
   .map-sidebar {
-    width: 100%;
+    width: auto;
     border-left: none;
     border-top: 1px solid rgba(255, 255, 255, 0.08);
     height: auto;
     padding: 16px;
+    flex: 1;
   }
 
   .shipment-route {

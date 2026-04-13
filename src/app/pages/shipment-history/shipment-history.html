@@ -7,62 +7,102 @@
       <span class="material-icons">search</span>
       <input type="text" [placeholder]="t('history.search')"
              [(ngModel)]="searchQuery" (ngModelChange)="applyFilters()">
+      @if (searchQuery) {
+        <button class="search-clear" (click)="searchQuery = ''; applyFilters()" aria-label="Clear">
+          <span class="material-icons">close</span>
+        </button>
+      }
     </div>
     <div class="date-filters">
-      <label class="date-label">{{ t('history.from') }}
+      <label class="date-label">
+        <span>{{ t('history.from') }}</span>
         <input type="date" [(ngModel)]="dateFrom" (ngModelChange)="applyFilters()">
       </label>
-      <label class="date-label">{{ t('history.to') }}
+      <label class="date-label">
+        <span>{{ t('history.to') }}</span>
         <input type="date" [(ngModel)]="dateTo" (ngModelChange)="applyFilters()">
       </label>
     </div>
   </div>
 
+  <!-- Status chips -->
+  <div class="chip-row">
+    <button class="chip" [class.active]="statusFilter === 'all'" (click)="setStatusFilter('all')">
+      {{ t('filter.all') }} <span class="chip-count">{{ statusCounts.all }}</span>
+    </button>
+    <button class="chip chip--transit" [class.active]="statusFilter === 'in_transit'" (click)="setStatusFilter('in_transit')">
+      {{ t('status.in_transit') }} <span class="chip-count">{{ statusCounts.in_transit }}</span>
+    </button>
+    <button class="chip chip--delivered" [class.active]="statusFilter === 'delivered'" (click)="setStatusFilter('delivered')">
+      {{ t('status.delivered') }} <span class="chip-count">{{ statusCounts.delivered }}</span>
+    </button>
+    @if (statusCounts.pending > 0) {
+      <button class="chip chip--pending" [class.active]="statusFilter === 'pending'" (click)="setStatusFilter('pending')">
+        {{ t('status.pending') }} <span class="chip-count">{{ statusCounts.pending }}</span>
+      </button>
+    }
+  </div>
+
   <div class="zt-card table-card">
-    <table mat-table [dataSource]="dataSource" matSort class="history-table">
+    @if (dataSource.data.length === 0) {
+      <div class="empty-state">
+        <span class="material-icons">search_off</span>
+        <h3>{{ t('empty.no_results') }}</h3>
+        <p>{{ t('empty.try_different') }}</p>
+      </div>
+    } @else {
+      <div class="table-scroll">
+        <table mat-table [dataSource]="dataSource" matSort class="history-table">
+          <!-- ID -->
+          <ng-container matColumnDef="id">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>{{ t('history.id') }}</th>
+            <td mat-cell *matCellDef="let s">
+              <a [routerLink]="['/shipment', s.id]" class="shipment-link">{{ s.id }}</a>
+            </td>
+          </ng-container>
 
-      <!-- ID -->
-      <ng-container matColumnDef="id">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header>{{ t('history.id') }}</th>
-        <td mat-cell *matCellDef="let s">
-          <a [routerLink]="['/shipment', s.id]" class="shipment-link">{{ s.id }}</a>
-        </td>
-      </ng-container>
+          <!-- Origin -->
+          <ng-container matColumnDef="origin">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>{{ t('history.origin') }}</th>
+            <td mat-cell *matCellDef="let s">{{ s.origin.city }}, {{ s.origin.country }}</td>
+          </ng-container>
 
-      <!-- Origin -->
-      <ng-container matColumnDef="origin">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header>{{ t('history.origin') }}</th>
-        <td mat-cell *matCellDef="let s">{{ s.origin.city }}, {{ s.origin.country }}</td>
-      </ng-container>
+          <!-- Destination -->
+          <ng-container matColumnDef="destination">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>{{ t('history.destination') }}</th>
+            <td mat-cell *matCellDef="let s">{{ s.destination.city }}, {{ s.destination.country }}</td>
+          </ng-container>
 
-      <!-- Destination -->
-      <ng-container matColumnDef="destination">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header>{{ t('history.destination') }}</th>
-        <td mat-cell *matCellDef="let s">{{ s.destination.city }}, {{ s.destination.country }}</td>
-      </ng-container>
+          <!-- Status -->
+          <ng-container matColumnDef="status">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>{{ t('history.status') }}</th>
+            <td mat-cell *matCellDef="let s">
+              <app-shipment-status-badge [status]="s.status" />
+            </td>
+          </ng-container>
 
-      <!-- Status -->
-      <ng-container matColumnDef="status">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header>{{ t('history.status') }}</th>
-        <td mat-cell *matCellDef="let s">
-          <app-shipment-status-badge [status]="s.status" />
-        </td>
-      </ng-container>
+          <!-- Departed -->
+          <ng-container matColumnDef="departed">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>{{ t('history.departed') }}</th>
+            <td mat-cell *matCellDef="let s">{{ s.departedAt | date:'MMM d, y' }}</td>
+          </ng-container>
 
-      <!-- Departed -->
-      <ng-container matColumnDef="departed">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header>{{ t('history.departed') }}</th>
-        <td mat-cell *matCellDef="let s">{{ s.departedAt | date:'MMM d, y' }}</td>
-      </ng-container>
+          <!-- Driver -->
+          <ng-container matColumnDef="driver">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>{{ t('history.driver') }}</th>
+            <td mat-cell *matCellDef="let s">{{ s.driver }}</td>
+          </ng-container>
 
-      <!-- Driver -->
-      <ng-container matColumnDef="driver">
-        <th mat-header-cell *matHeaderCellDef mat-sort-header>{{ t('history.driver') }}</th>
-        <td mat-cell *matCellDef="let s">{{ s.driver }}</td>
-      </ng-container>
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns;" class="data-row"></tr>
+        </table>
+      </div>
 
-      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-    </table>
+      <mat-paginator
+        [pageSize]="10"
+        [pageSizeOptions]="[10, 25, 50]"
+        [showFirstLastButtons]="true">
+      </mat-paginator>
+    }
   </div>
 </div>

@@ -1,54 +1,89 @@
 <div class="zt-page">
   <h1 class="zt-page-title">{{ t('documents.title') }}</h1>
 
-  <!-- Search bar -->
-  <div class="search-box">
-    <span class="material-icons">search</span>
-    <input type="text" [placeholder]="t('documents.search')"
-           [(ngModel)]="searchQuery" (ngModelChange)="applyFilters()">
+  <!-- Search + sort bar -->
+  <div class="filter-bar">
+    <div class="search-box">
+      <span class="material-icons">search</span>
+      <input type="text" [placeholder]="t('documents.search')"
+             [(ngModel)]="searchQuery" (ngModelChange)="applyFilters()">
+      @if (searchQuery) {
+        <button class="search-clear" (click)="searchQuery = ''; applyFilters()" aria-label="Clear">
+          <span class="material-icons">close</span>
+        </button>
+      }
+    </div>
+
+    <label class="sort-select">
+      <span>{{ t('filter.sort_by') }}</span>
+      <select [(ngModel)]="sortKey" (ngModelChange)="applyFilters()">
+        <option value="newest">{{ t('sort.newest') }}</option>
+        <option value="oldest">{{ t('sort.oldest') }}</option>
+        <option value="shipment_id">{{ t('sort.shipment_id') }}</option>
+        <option value="type">{{ t('sort.type') }}</option>
+      </select>
+    </label>
   </div>
 
-  <!-- Filter tabs -->
-  <div class="filter-bar">
-    <button class="filter-btn" [class.active]="activeFilter === 'all'" (click)="filterBy('all')">
-      {{ t('documents.all') }} ({{ allDocs.length }})
+  <!-- Type filter chips -->
+  <div class="chip-row">
+    <button class="chip" [class.active]="activeFilter === 'all'" (click)="filterBy('all')">
+      {{ t('documents.all') }} <span class="chip-count">{{ allDocs.length }}</span>
     </button>
     @for (type of docTypes; track type) {
-      <button class="filter-btn" [class.active]="activeFilter === type" (click)="filterBy(type)">
+      <button class="chip" [class.active]="activeFilter === type" (click)="filterBy(type)">
         {{ docLabel($any(type)) }}
       </button>
     }
   </div>
 
-  <!-- Documents grid -->
-  <div class="doc-grid">
-    @for (doc of filteredDocs; track doc.shipmentId + doc.type) {
-      <div class="doc-card">
-        <div class="doc-card-header">
-          <span class="material-icons doc-type-icon">{{ docIcon(doc.type) }}</span>
-          <div class="doc-type-info">
-            <span class="doc-type-name">{{ docLabel(doc.type) }}</span>
-            <span class="doc-type-ref">{{ doc.shipmentId }}</span>
+  @if (filteredDocs.length === 0) {
+    <div class="zt-card empty-state">
+      <span class="material-icons">search_off</span>
+      <h3>{{ t('empty.no_results') }}</h3>
+      <p>{{ t('empty.try_different') }}</p>
+    </div>
+  } @else {
+    <!-- Documents grid -->
+    <div class="doc-grid">
+      @for (doc of pagedDocs; track doc.shipmentId + doc.type) {
+        <div class="doc-card">
+          <div class="doc-card-header">
+            <span class="material-icons doc-type-icon">{{ docIcon(doc.type) }}</span>
+            <div class="doc-type-info">
+              <span class="doc-type-name">{{ docLabel(doc.type) }}</span>
+              <span class="doc-type-ref">{{ doc.shipmentId }}</span>
+            </div>
+          </div>
+
+          <div class="doc-card-route">
+            {{ doc.origin }}
+            <span class="material-icons">arrow_forward</span>
+            {{ doc.destination }}
+          </div>
+
+          <div class="doc-card-actions">
+            <a [routerLink]="['/shipment', doc.shipmentId]" class="doc-action">
+              <span class="material-icons">visibility</span>
+              {{ t('detail.title') }}
+            </a>
+            <button class="doc-action doc-action--primary" (click)="downloadDoc(doc.type)">
+              <span class="material-icons">download</span>
+              {{ t('documents.download') }}
+            </button>
           </div>
         </div>
+      }
+    </div>
 
-        <div class="doc-card-route">
-          {{ doc.origin }}
-          <span class="material-icons">arrow_forward</span>
-          {{ doc.destination }}
-        </div>
-
-        <div class="doc-card-actions">
-          <a [routerLink]="['/shipment', doc.shipmentId]" class="doc-action">
-            <span class="material-icons">visibility</span>
-            {{ t('detail.title') }}
-          </a>
-          <button class="doc-action doc-action--primary" (click)="downloadDoc(doc.type)">
-            <span class="material-icons">download</span>
-            {{ t('documents.download') }}
-          </button>
-        </div>
-      </div>
-    }
-  </div>
+    <div class="paginator-wrapper">
+      <mat-paginator
+        [length]="filteredDocs.length"
+        [pageSize]="pageSize"
+        [pageSizeOptions]="[12, 24, 48]"
+        [showFirstLastButtons]="true"
+        (page)="onPageChange($event)">
+      </mat-paginator>
+    </div>
+  }
 </div>
