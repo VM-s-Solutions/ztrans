@@ -1,0 +1,116 @@
+@use '@angular/material' as mat;
+
+// Z-TRANS brand tokens — matched to z-trans.sk
+// Logo blue extracted from official SVG: #1A61AB
+:root {
+  --zt-blue: #1A61AB;
+  --zt-blue-light: #2874bf;
+  --zt-blue-dark: #144d8a;
+  --zt-blue-50: #e3eef8;
+  --zt-yellow: #f5c518;
+  --zt-yellow-light: #fdd835;
+  --zt-yellow-dark: #d4a90e;
+  --zt-dark: #1a1a2e;
+  --zt-dark-light: #2a2a42;
+  --zt-dark-lighter: #3a3a55;
+  --zt-white: #ffffff;
+  --zt-gray-50: #f8f9fa;
+  --zt-gray-100: #f1f3f5;
+  --zt-gray-200: #e9ecef;
+  --zt-gray-300: #dee2e6;
+  --zt-gray-500: #adb5bd;
+  --zt-gray-700: #495057;
+  --zt-gray-900: #212529;
+  --zt-success: #2ea44f;
+  --zt-warning: #e67e22;
+  --zt-radius: 8px;
+  --zt-shadow: 0 1px 3px rgba(0, 0, 0, 0.08), 0 1px 2px rgba(0, 0, 0, 0.06);
+  --zt-shadow-md: 0 4px 6px rgba(0, 0, 0, 0.07), 0 2px 4px rgba(0, 0, 0, 0.06);
+}
+
+html {
+  height: 100%;
+  @include mat.theme(
+    (
+      color: (
+        primary: mat.$blue-palette,
+        tertiary: mat.$cyan-palette,
+      ),
+      typography: Montserrat,
+      density: 0,
+    )
+  );
+}
+
+body {
+  color-scheme: light;
+  background-color: var(--zt-gray-50);
+  color: var(--zt-gray-900);
+  font-family: Montserrat, 'Segoe UI', sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+  margin: 0;
+  height: 100%;
+  -webkit-font-smoothing: antialiased;
+}
+
+// Leaflet CSS import
+@import 'leaflet/dist/leaflet.css';
+
+// Utility classes
+.zt-card {
+  background: var(--zt-white);
+  border-radius: var(--zt-radius);
+  box-shadow: var(--zt-shadow);
+  padding: 24px;
+}
+
+.zt-page {
+  padding: 30px;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.zt-page-title {
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--zt-dark);
+  margin: 0 0 24px 0;
+}
+
+.zt-section-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--zt-dark);
+  margin: 0 0 16px 0;
+}
+
+// Material overrides for Z-TRANS brand
+.mat-mdc-raised-button.mat-primary,
+.mat-mdc-unelevated-button.mat-primary {
+  --mdc-filled-button-container-color: var(--zt-blue);
+  --mdc-filled-button-label-text-color: var(--zt-white);
+}
+
+.mat-mdc-fab.mat-primary {
+  --mdc-fab-container-color: var(--zt-blue);
+}
+
+a {
+  color: var(--zt-blue);
+  text-decoration: none;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+// Responsive helpers
+@media (max-width: 768px) {
+  .zt-page {
+    padding: 16px;
+  }
+  .zt-page-title {
+    font-size: 20px;
+    margin-bottom: 16px;
+  }
+}

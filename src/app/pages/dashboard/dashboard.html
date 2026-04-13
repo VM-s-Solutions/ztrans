@@ -1,0 +1,128 @@
+<div class="zt-page">
+  <!-- Welcome banner -->
+  <div class="welcome-banner">
+    <div class="welcome-text">
+      <h1>{{ t('customer.welcome') }}, {{ customer.contactPerson }}</h1>
+      <p>{{ customer.company }} &middot; {{ t('customer.since') }} {{ customer.since | slice:0:4 }}</p>
+    </div>
+    <a routerLink="/quote" class="quote-cta">
+      <span class="material-icons">request_quote</span>
+      {{ t('quote.request') }}
+    </a>
+  </div>
+
+  <!-- Stat cards -->
+  <div class="stat-grid">
+    <div class="stat-card stat-card--orange">
+      <span class="material-icons stat-icon">local_shipping</span>
+      <div class="stat-content">
+        <span class="stat-value">{{ activeShipments.length }}</span>
+        <span class="stat-label">{{ t('dashboard.active') }}</span>
+      </div>
+    </div>
+
+    <div class="stat-card stat-card--green">
+      <span class="material-icons stat-icon">check_circle</span>
+      <div class="stat-content">
+        <span class="stat-value">{{ deliveredShipments.length }}</span>
+        <span class="stat-label">{{ t('dashboard.delivered') }}</span>
+      </div>
+    </div>
+
+    <div class="stat-card stat-card--navy">
+      <span class="material-icons stat-icon">speed</span>
+      <div class="stat-content">
+        <span class="stat-value">{{ onTimeRate }}%</span>
+        <span class="stat-label">{{ t('dashboard.on_time_rate') }}</span>
+      </div>
+    </div>
+
+    <div class="stat-card stat-card--dark">
+      <span class="material-icons stat-icon">timer</span>
+      <div class="stat-content">
+        <span class="stat-value">{{ avgTransitTime }}</span>
+        <span class="stat-label">{{ t('dashboard.avg_transit') }}</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Sparkline trend row -->
+  <div class="trend-row">
+    <div class="trend-card">
+      <div class="trend-header">
+        <span class="trend-title">{{ t('dashboard.shipments_week') }}</span>
+        <span class="trend-total">{{ customer.totalShipments }} {{ t('dashboard.total_label') }}</span>
+      </div>
+      <svg class="sparkline" viewBox="0 0 100 30" preserveAspectRatio="none">
+        <path [attr.d]="weeklySparkline" fill="none" stroke="var(--zt-blue)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
+    <div class="trend-card">
+      <div class="trend-header">
+        <span class="trend-title">{{ t('dashboard.next_eta') }}</span>
+      </div>
+      <span class="trend-eta">{{ nextEta }}</span>
+    </div>
+  </div>
+
+  <div class="dashboard-grid">
+    <!-- Recent activity -->
+    <div class="zt-card">
+      <h2 class="zt-section-title">{{ t('dashboard.recent') }}</h2>
+      <div class="activity-list">
+        @for (s of shipments | slice:0:10; track s.id) {
+          <a [routerLink]="['/shipment', s.id]" class="activity-item">
+            <div class="activity-left">
+              <app-shipment-status-badge [status]="s.status" />
+              <div class="activity-info">
+                <span class="activity-id">{{ s.id }}</span>
+                <span class="activity-route">{{ s.origin.city }} → {{ s.destination.city }}</span>
+              </div>
+            </div>
+            <div class="activity-right">
+              <span class="activity-cargo">{{ s.cargo }}</span>
+              <span class="activity-driver">{{ s.driver }}</span>
+            </div>
+            <span class="material-icons activity-chevron">chevron_right</span>
+          </a>
+        }
+      </div>
+    </div>
+
+    <!-- Quick links -->
+    <div class="zt-card">
+      <h2 class="zt-section-title">{{ t('dashboard.quick_links') }}</h2>
+      <div class="quick-links">
+        <a routerLink="/map" class="quick-link">
+          <span class="material-icons">map</span>
+          <span>{{ t('dashboard.view_map') }}</span>
+          <span class="material-icons ql-arrow">arrow_forward</span>
+        </a>
+        <a routerLink="/documents" class="quick-link">
+          <span class="material-icons">description</span>
+          <span>{{ t('dashboard.view_documents') }}</span>
+          <span class="material-icons ql-arrow">arrow_forward</span>
+        </a>
+        <a routerLink="/history" class="quick-link">
+          <span class="material-icons">history</span>
+          <span>{{ t('dashboard.view_history') }}</span>
+          <span class="material-icons ql-arrow">arrow_forward</span>
+        </a>
+      </div>
+
+      @if (nextEtaShipment; as s) {
+        <div class="next-delivery">
+          <h3 class="zt-section-title">{{ t('dashboard.next_eta') }}</h3>
+          <div class="next-delivery-card">
+            <div class="nd-route">
+              <span class="material-icons">local_shipping</span>
+              {{ s.origin.city }} → {{ s.destination.city }}
+            </div>
+            <div class="nd-id">{{ s.id }}</div>
+            <div class="nd-eta">{{ nextEta }}</div>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</div>

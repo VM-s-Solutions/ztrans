@@ -1,0 +1,57 @@
+@if (quote) {
+  <div class="zt-page">
+    <div class="confirmation-card">
+      <div class="confirmation-icon">
+        <span class="material-icons">check_circle</span>
+      </div>
+
+      <h1 class="confirmation-title">{{ t('quote.confirmation_title') }}</h1>
+      <p class="confirmation-subtitle">{{ t('quote.confirmation_subtitle') }}</p>
+
+      <div class="quote-id">{{ quote['quoteId'] }}</div>
+
+      <div class="summary-grid">
+        <div class="summary-item">
+          <span class="summary-label">{{ t('quote.origin') }}</span>
+          <span class="summary-value">{{ quote['origin'] }}</span>
+        </div>
+        <div class="summary-item">
+          <span class="summary-label">{{ t('quote.destination') }}</span>
+          <span class="summary-value">{{ quote['destination'] }}</span>
+        </div>
+        <div class="summary-item">
+          <span class="summary-label">{{ t('quote.cargo_type') }}</span>
+          <span class="summary-value">{{ quote['cargoType'] }}</span>
+        </div>
+        <div class="summary-item">
+          <span class="summary-label">{{ t('quote.weight') }}</span>
+          <span class="summary-value">{{ quote['weight'] }}t</span>
+        </div>
+        <div class="summary-item">
+          <span class="summary-label">{{ t('quote.pickup_date') }}</span>
+          <span class="summary-value">{{ quote['pickupDate'] }}</span>
+        </div>
+        <div class="summary-item">
+          <span class="summary-label">{{ t('quote.contact_email') }}</span>
+          <span class="summary-value">{{ quote['contactEmail'] }}</span>
+        </div>
+      </div>
+
+      <div class="confirmation-note">
+        <span class="material-icons">schedule</span>
+        {{ t('quote.response_time') }}
+      </div>
+
+      <div class="confirmation-actions">
+        <a routerLink="/dashboard" class="action-btn action-btn--primary">
+          <span class="material-icons">dashboard</span>
+          {{ t('nav.dashboard') }}
+        </a>
+        <a routerLink="/quote" class="action-btn">
+          <span class="material-icons">add</span>
+          {{ t('quote.new_quote') }}
+        </a>
+      </div>
+    </div>
+  </div>
+}

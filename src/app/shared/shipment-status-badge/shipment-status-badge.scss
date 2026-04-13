@@ -1,0 +1,30 @@
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1;
+  white-space: nowrap;
+
+  .badge-icon {
+    font-size: 14px;
+  }
+}
+
+.badge--in_transit {
+  background: var(--zt-blue-50);
+  color: var(--zt-blue-dark);
+}
+
+.badge--delivered {
+  background: #e8f5e9;
+  color: #1b5e20;
+}
+
+.badge--pending {
+  background: #f3f4f6;
+  color: #6b7280;
+}

@@ -1,0 +1,11 @@
+{
+  "id": "SHP-FR-0015",
+  "company": "Durand Industrie S.A.",
+  "country": "France",
+  "language": "fr",
+  "contactPerson": "Pierre Durand",
+  "email": "p.durand@durand-industrie.fr",
+  "activeShipments": 10,
+  "totalShipments": 60,
+  "since": "2022-03-15"
+}

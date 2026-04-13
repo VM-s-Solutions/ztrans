@@ -1,0 +1,46 @@
+<div class="map-page">
+  <div class="map-container" #mapContainer></div>
+
+  <div class="map-sidebar">
+    <h2 class="zt-section-title">{{ t('map.title') }}</h2>
+
+    <a routerLink="/quote" class="sidebar-quote-btn">
+      <span class="material-icons">request_quote</span>
+      {{ t('quote.request') }}
+    </a>
+
+    @for (s of activeShipments; track s.id) {
+      <div class="shipment-card">
+        <div class="shipment-card-header">
+          <span class="shipment-id">{{ s.id }}</span>
+          <span class="shipment-status">
+            <span class="material-icons">local_shipping</span>
+            {{ t('status.in_transit') }}
+          </span>
+        </div>
+
+        <div class="shipment-route">
+          <span>{{ s.origin.city }}, {{ s.origin.country }}</span>
+          <span class="material-icons route-arrow">arrow_forward</span>
+          <span>{{ s.destination.city }}, {{ s.destination.country }}</span>
+        </div>
+
+        <div class="shipment-info">
+          <span class="material-icons">person</span>
+          {{ s.driver }} &middot; {{ s.truck }}
+        </div>
+
+        <div class="eta-countdown">
+          <span class="material-icons">schedule</span>
+          <span class="eta-label">{{ t('map.eta') }}:</span>
+          <span class="eta-value">{{ etaCountdowns[s.id] || '—' }}</span>
+        </div>
+
+        <a [routerLink]="['/shipment', s.id]" class="detail-link">
+          {{ t('detail.title') }}
+          <span class="material-icons">chevron_right</span>
+        </a>
+      </div>
+    }
+  </div>
+</div>

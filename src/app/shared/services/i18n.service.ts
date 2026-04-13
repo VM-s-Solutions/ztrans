@@ -1,0 +1,109 @@
+import { Injectable, signal } from '@angular/core';
+
+export type Lang = 'sk' | 'fr' | 'en';
+
+const translations: Record<string, Record<Lang, string>> = {
+  'nav.dashboard': { sk: 'Prehľad', fr: 'Tableau de bord', en: 'Dashboard' },
+  'nav.map': { sk: 'Mapa', fr: 'Carte', en: 'Map' },
+  'nav.history': { sk: 'História', fr: 'Historique', en: 'History' },
+  'nav.documents': { sk: 'Dokumenty', fr: 'Documents', en: 'Documents' },
+  'status.in_transit': { sk: 'V preprave', fr: 'En transit', en: 'In Transit' },
+  'status.delivered': { sk: 'Doručené', fr: 'Livré', en: 'Delivered' },
+  'status.pending': { sk: 'Čaká', fr: 'En attente', en: 'Pending' },
+  'dashboard.title': { sk: 'Prehľad zásielok', fr: 'Aperçu des expéditions', en: 'Shipment Overview' },
+  'dashboard.active': { sk: 'Aktívne zásielky', fr: 'Expéditions actives', en: 'Active Shipments' },
+  'dashboard.delivered': { sk: 'Doručené', fr: 'Livrées', en: 'Delivered' },
+  'dashboard.total': { sk: 'Celkové zásielky', fr: 'Total expéditions', en: 'Total Shipments' },
+  'dashboard.next_eta': { sk: 'Najbližšie ETA', fr: 'Prochain ETA', en: 'Next ETA' },
+  'dashboard.recent': { sk: 'Posledná aktivita', fr: 'Activité récente', en: 'Recent Activity' },
+  'dashboard.quick_links': { sk: 'Rýchle odkazy', fr: 'Liens rapides', en: 'Quick Links' },
+  'dashboard.view_map': { sk: 'Zobraziť mapu', fr: 'Voir la carte', en: 'View Map' },
+  'dashboard.view_documents': { sk: 'Zobraziť dokumenty', fr: 'Voir les documents', en: 'View Documents' },
+  'dashboard.view_history': { sk: 'Zobraziť históriu', fr: "Voir l'historique", en: 'View History' },
+  'map.title': { sk: 'Mapa zásielok', fr: 'Carte des expéditions', en: 'Shipment Map' },
+  'map.eta': { sk: 'Očakávaný príchod', fr: "Heure d'arrivée prévue", en: 'Estimated Arrival' },
+  'detail.title': { sk: 'Detail zásielky', fr: "Détail de l'expédition", en: 'Shipment Detail' },
+  'detail.origin': { sk: 'Odosielateľ', fr: 'Origine', en: 'Origin' },
+  'detail.destination': { sk: 'Príjemca', fr: 'Destination', en: 'Destination' },
+  'detail.driver': { sk: 'Vodič', fr: 'Chauffeur', en: 'Driver' },
+  'detail.truck': { sk: 'Vozidlo', fr: 'Véhicule', en: 'Truck' },
+  'detail.cargo': { sk: 'Náklad', fr: 'Cargaison', en: 'Cargo' },
+  'detail.weight': { sk: 'Hmotnosť', fr: 'Poids', en: 'Weight' },
+  'detail.departed': { sk: 'Odchod', fr: 'Départ', en: 'Departed' },
+  'detail.eta': { sk: 'Očakávaný príchod', fr: 'Arrivée prévue', en: 'ETA' },
+  'detail.delivered_at': { sk: 'Doručené', fr: 'Livré le', en: 'Delivered' },
+  'detail.documents': { sk: 'Dokumenty', fr: 'Documents', en: 'Documents' },
+  'detail.timeline': { sk: 'Časová os', fr: 'Chronologie', en: 'Timeline' },
+  'detail.view_on_map': { sk: 'Zobraziť na mape', fr: 'Voir sur la carte', en: 'View on Map' },
+  'history.title': { sk: 'História zásielok', fr: 'Historique des expéditions', en: 'Shipment History' },
+  'history.id': { sk: 'ID zásielky', fr: "ID d'expédition", en: 'Shipment ID' },
+  'history.origin': { sk: 'Odkiaľ', fr: 'Origine', en: 'Origin' },
+  'history.destination': { sk: 'Kam', fr: 'Destination', en: 'Destination' },
+  'history.status': { sk: 'Stav', fr: 'Statut', en: 'Status' },
+  'history.departed': { sk: 'Odchod', fr: 'Départ', en: 'Departed' },
+  'history.driver': { sk: 'Vodič', fr: 'Chauffeur', en: 'Driver' },
+  'documents.title': { sk: 'Dokumenty', fr: 'Documents', en: 'Documents' },
+  'documents.shipment': { sk: 'Zásielka', fr: 'Expédition', en: 'Shipment' },
+  'documents.type': { sk: 'Typ', fr: 'Type', en: 'Type' },
+  'documents.download': { sk: 'Stiahnuť', fr: 'Télécharger', en: 'Download' },
+  'documents.all': { sk: 'Všetky', fr: 'Tous', en: 'All' },
+  'doc.cmr': { sk: 'CMR nákladný list', fr: 'Lettre de voiture CMR', en: 'CMR Consignment Note' },
+  'doc.delivery_note': { sk: 'Dodací list', fr: 'Bon de livraison', en: 'Delivery Note' },
+  'doc.pod': { sk: 'Potvrdenie o doručení', fr: 'Preuve de livraison', en: 'Proof of Delivery' },
+  'doc.invoice': { sk: 'Faktúra', fr: 'Facture', en: 'Invoice' },
+  'doc.customs_declaration': { sk: 'Colné vyhlásenie', fr: 'Déclaration douanière', en: 'Customs Declaration' },
+  'customer.welcome': { sk: 'Vitajte', fr: 'Bienvenue', en: 'Welcome' },
+  'customer.since': { sk: 'Zákazník od', fr: 'Client depuis', en: 'Customer since' },
+  'quote.title': { sk: 'Žiadosť o cenovú ponuku', fr: 'Demande de devis', en: 'Request a Quote' },
+  'quote.subtitle': { sk: 'Vyplňte údaje a odpovieme do 24 hodín', fr: 'Remplissez les détails et nous répondrons sous 24 heures', en: 'Fill in the details and we\'ll respond within 24 hours' },
+  'quote.origin': { sk: 'Odkiaľ', fr: 'Origine', en: 'Origin' },
+  'quote.destination': { sk: 'Kam', fr: 'Destination', en: 'Destination' },
+  'quote.cargo_type': { sk: 'Typ nákladu', fr: 'Type de cargaison', en: 'Cargo Type' },
+  'quote.weight': { sk: 'Hmotnosť', fr: 'Poids', en: 'Weight' },
+  'quote.pickup_date': { sk: 'Dátum nakládky', fr: 'Date de chargement', en: 'Pickup Date' },
+  'quote.contact_name': { sk: 'Kontaktná osoba', fr: 'Nom du contact', en: 'Contact Name' },
+  'quote.contact_email': { sk: 'E-mail', fr: 'E-mail', en: 'Email' },
+  'quote.notes': { sk: 'Poznámky', fr: 'Notes', en: 'Notes' },
+  'quote.notes_placeholder': { sk: 'Špeciálne požiadavky...', fr: 'Exigences spéciales...', en: 'Special requirements...' },
+  'quote.select_city': { sk: 'Vyberte mesto', fr: 'Choisir une ville', en: 'Select city' },
+  'quote.select_type': { sk: 'Vyberte typ', fr: 'Choisir le type', en: 'Select type' },
+  'quote.submit': { sk: 'Odoslať žiadosť', fr: 'Envoyer la demande', en: 'Submit Request' },
+  'quote.confirmation_title': { sk: 'Žiadosť odoslaná!', fr: 'Demande envoyée !', en: 'Quote Request Submitted!' },
+  'quote.confirmation_subtitle': { sk: 'Z-TRANS vás bude kontaktovať do 24 hodín', fr: 'Z-TRANS vous contactera sous 24 heures', en: 'Z-TRANS will contact you within 24 hours' },
+  'quote.response_time': { sk: 'Odpoveď do 24 hodín v pracovné dni', fr: 'Réponse sous 24h les jours ouvrables', en: 'Response within 24 hours on business days' },
+  'quote.new_quote': { sk: 'Nová žiadosť', fr: 'Nouvelle demande', en: 'New Quote' },
+  'quote.request': { sk: 'Žiadosť o ponuku', fr: 'Demander un devis', en: 'Request a Quote' },
+  'history.search': { sk: 'Hľadať zásielky...', fr: 'Rechercher des expéditions...', en: 'Search shipments...' },
+  'history.from': { sk: 'Od', fr: 'De', en: 'From' },
+  'history.to': { sk: 'Do', fr: "Jusqu'à", en: 'To' },
+  'documents.search': { sk: 'Hľadať dokumenty...', fr: 'Rechercher des documents...', en: 'Search documents...' },
+  'status.delayed': { sk: 'Oneskorené', fr: 'Retardé', en: 'Delayed' },
+  'dashboard.on_time_rate': { sk: 'Včasnosť', fr: 'Taux de ponctualité', en: 'On-Time Rate' },
+  'dashboard.avg_transit': { sk: 'Priem. preprava', fr: 'Transit moyen', en: 'Avg. Transit' },
+  'dashboard.shipments_week': { sk: 'Zásielky / týždeň', fr: 'Expéditions / semaine', en: 'Shipments / Week' },
+  'dashboard.total_label': { sk: 'celkom', fr: 'au total', en: 'total' },
+  'timeline.pickup': { sk: 'Nakládka', fr: 'Chargement', en: 'Pickup' },
+  'timeline.in_transit': { sk: 'V preprave', fr: 'En transit', en: 'In Transit' },
+  'timeline.border_crossing': { sk: 'Hraničný prechod', fr: 'Passage frontière', en: 'Border Crossing' },
+  'timeline.delivered': { sk: 'Doručené', fr: 'Livré', en: 'Delivered' },
+  'detail.not_found': { sk: 'Zásielka nenájdená.', fr: 'Expédition introuvable.', en: 'Shipment not found.' },
+  'detail.back': { sk: 'Späť na prehľad', fr: 'Retour au tableau de bord', en: 'Back to Dashboard' },
+  'footer.tagline': { sk: 'Na cestách od 1999', fr: 'Sur les routes depuis 1999', en: 'On the road since 1999' },
+  'footer.portal': { sk: 'Portál odosielateľa', fr: 'Portail expéditeur', en: 'Shipper Portal' },
+  'quote.weight_placeholder': { sk: 'napr. 18,5', fr: 'ex. 18,5', en: 'e.g. 18.5' },
+};
+
+@Injectable({ providedIn: 'root' })
+export class I18nService {
+  readonly lang = signal<Lang>('en');
+
+  setLang(lang: Lang): void {
+    this.lang.set(lang);
+  }
+
+  t(key: string): string {
+    const entry = translations[key];
+    if (!entry) return key;
+    return entry[this.lang()] ?? entry['en'] ?? key;
+  }
+}

@@ -1,0 +1,91 @@
+<div class="zt-page">
+  <h1 class="zt-page-title">{{ t('quote.title') }}</h1>
+  <p class="quote-subtitle">{{ t('quote.subtitle') }}</p>
+
+  <form class="quote-form" (ngSubmit)="submit()" #quoteForm="ngForm">
+    <div class="form-grid">
+      <!-- Origin -->
+      <div class="form-group">
+        <label class="form-label">{{ t('quote.origin') }} *</label>
+        <select class="form-control" [(ngModel)]="form.origin" name="origin" required>
+          <option value="" disabled>{{ t('quote.select_city') }}</option>
+          @for (city of skCities; track city) {
+            <option [value]="city">{{ city }}, SK</option>
+          }
+          @for (city of frCities; track city) {
+            <option [value]="city">{{ city }}, FR</option>
+          }
+        </select>
+      </div>
+
+      <!-- Destination -->
+      <div class="form-group">
+        <label class="form-label">{{ t('quote.destination') }} *</label>
+        <select class="form-control" [(ngModel)]="form.destination" name="destination" required>
+          <option value="" disabled>{{ t('quote.select_city') }}</option>
+          @for (city of frCities; track city) {
+            <option [value]="city">{{ city }}, FR</option>
+          }
+          @for (city of skCities; track city) {
+            <option [value]="city">{{ city }}, SK</option>
+          }
+        </select>
+      </div>
+
+      <!-- Cargo Type -->
+      <div class="form-group">
+        <label class="form-label">{{ t('quote.cargo_type') }} *</label>
+        <select class="form-control" [(ngModel)]="form.cargoType" name="cargoType" required>
+          <option value="" disabled>{{ t('quote.select_type') }}</option>
+          @for (type of cargoTypes; track type) {
+            <option [value]="type">{{ type }}</option>
+          }
+        </select>
+      </div>
+
+      <!-- Weight -->
+      <div class="form-group">
+        <label class="form-label">{{ t('quote.weight') }} (t) *</label>
+        <input type="number" class="form-control" [(ngModel)]="form.weight"
+               name="weight" required min="0.1" max="25" step="0.1"
+               [placeholder]="t('quote.weight_placeholder')">
+      </div>
+
+      <!-- Pickup Date -->
+      <div class="form-group">
+        <label class="form-label">{{ t('quote.pickup_date') }} *</label>
+        <input type="date" class="form-control" [(ngModel)]="form.pickupDate"
+               name="pickupDate" required [min]="minDate">
+      </div>
+
+      <!-- Contact Name -->
+      <div class="form-group">
+        <label class="form-label">{{ t('quote.contact_name') }}</label>
+        <input type="text" class="form-control" [(ngModel)]="form.contactName"
+               name="contactName">
+      </div>
+
+      <!-- Contact Email -->
+      <div class="form-group form-group--wide">
+        <label class="form-label">{{ t('quote.contact_email') }}</label>
+        <input type="email" class="form-control" [(ngModel)]="form.contactEmail"
+               name="contactEmail">
+      </div>
+
+      <!-- Notes -->
+      <div class="form-group form-group--wide">
+        <label class="form-label">{{ t('quote.notes') }}</label>
+        <textarea class="form-control form-textarea" [(ngModel)]="form.notes"
+                  name="notes" rows="3"
+                  [placeholder]="t('quote.notes_placeholder')"></textarea>
+      </div>
+    </div>
+
+    <div class="form-actions">
+      <button type="submit" class="submit-btn" [disabled]="quoteForm.invalid">
+        <span class="material-icons">send</span>
+        {{ t('quote.submit') }}
+      </button>
+    </div>
+  </form>
+</div>

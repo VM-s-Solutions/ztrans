@@ -1,0 +1,1788 @@
+[
+  {
+    "id": "ZT-2026-0827",
+    "origin": {
+      "city": "Bratislava",
+      "country": "SK",
+      "lat": 48.1486,
+      "lng": 17.1077
+    },
+    "destination": {
+      "city": "Marseille",
+      "country": "FR",
+      "lat": 43.2965,
+      "lng": 5.3698
+    },
+    "status": "in_transit",
+    "currentPosition": {
+      "lat": 47.1474,
+      "lng": 14.6856,
+      "updatedAt": "2026-04-13T11:22:00.000Z"
+    },
+    "departedAt": "2026-04-12T23:00:00.000Z",
+    "eta": "2026-04-15T14:00:00.000Z",
+    "driver": "Pavol Varga",
+    "truck": "TN-628EF",
+    "cargo": "Rubber products — 18 pallets",
+    "weight": "17.5t",
+    "documents": [
+      "cmr",
+      "delivery_note",
+      "customs_declaration"
+    ]
+  },
+  {
+    "id": "ZT-2026-0821",
+    "origin": {
+      "city": "Žilina",
+      "country": "SK",
+      "lat": 49.2231,
+      "lng": 18.7394
+    },
+    "destination": {
+      "city": "Strasbourg",
+      "country": "FR",
+      "lat": 48.5734,
+      "lng": 7.7521
+    },
+    "status": "in_transit",
+    "currentPosition": {
+      "lat": 48.9584,
+      "lng": 14.2631,
+      "updatedAt": "2026-04-13T11:37:00.000Z"
+    },
+    "departedAt": "2026-04-12T14:00:00.000Z",
+    "eta": "2026-04-14T20:00:00.000Z",
+    "driver": "Andrej Bartoš",
+    "truck": "ZA-156NP",
+    "cargo": "Plastic granules — 13 pallets",
+    "weight": "9.6t",
+    "documents": [
+      "cmr",
+      "delivery_note"
+    ]
+  },
+  {
+    "id": "ZT-2026-0824",
+    "origin": {
+      "city": "Nitra",
+      "country": "SK",
+      "lat": 48.3069,
+      "lng": 18.0864
+    },
+    "destination": {
+      "city": "Lille",
+      "country": "FR",
+      "lat": 50.6292,
+      "lng": 3.0573
+    },
+    "status": "in_transit",
+    "currentPosition": {
+      "lat": 49.2278,
+      "lng": 12.1266,
+      "updatedAt": "2026-04-13T11:21:00.000Z"
+    },
+    "departedAt": "2026-04-12T13:00:00.000Z",
+    "eta": "2026-04-14T23:00:00.000Z",
+    "driver": "Marek Szabó",
+    "truck": "TN-803RS",
+    "cargo": "Glass products — 32 pallets",
+    "weight": "14.6t",
+    "documents": [
+      "cmr",
+      "delivery_note"
+    ]
+  },
+  {
+    "id": "ZT-2026-0843",
+    "origin": {
+      "city": "Trnava",
+      "country": "SK",
+      "lat": 48.3774,
+      "lng": 17.5883
+    },
+    "destination": {
+      "city": "Marseille",
+      "country": "FR",
+      "lat": 43.2965,
+      "lng": 5.3698
+    },
+    "status": "in_transit",
+    "currentPosition": {
+      "lat": 44.0223,
+      "lng": 7.1153,
+      "updatedAt": "2026-04-13T11:24:00.000Z"
+    },
+    "departedAt": "2026-04-12T00:00:00.000Z",
+    "eta": "2026-04-13T18:00:00.000Z",
+    "driver": "Marek Szabó",
+    "truck": "TN-803RS",
+    "cargo": "Glass products — 8 pallets",
+    "weight": "12.5t",
+    "documents": [
+      "cmr",
+      "delivery_note",
+      "customs_declaration"
+    ]
+  },
+  {
+    "id": "ZT-2026-0833",
+    "origin": {
+      "city": "Prešov",
+      "country": "SK",
+      "lat": 48.9967,
+      "lng": 21.2344
+    },
+    "destination": {
+      "city": "Paris",
+      "country": "FR",
+      "lat": 48.8566,
+      "lng": 2.3522
+    },
+    "status": "in_transit",
+    "currentPosition": {
+      "lat": 48.8636,
+      "lng": 3.2963,
+      "updatedAt": "2026-04-13T11:35:00.000Z"
+    },
+    "departedAt": "2026-04-11T20:00:00.000Z",
+    "eta": "2026-04-13T06:00:00.000Z",
+    "driver": "Tomáš Horváth",
+    "truck": "TN-512DM",
+    "cargo": "Food products — dry goods — 21 pallets",
+    "weight": "18.8t",
+    "documents": [
+      "cmr",
+      "delivery_note",
+      "customs_declaration"
+    ]
+  },
+  {
+    "id": "ZT-2026-0839",
+    "origin": {
+      "city": "Lille",
+      "country": "FR",
+      "lat": 50.6292,
+      "lng": 3.0573
+    },
+    "destination": {
+      "city": "Nitra",
+      "country": "SK",
+      "lat": 48.3069,
+      "lng": 18.0864
+    },
+    "status": "in_transit",
+    "currentPosition": {
+      "lat": 48.5088,
+      "lng": 16.7795,
+      "updatedAt": "2026-04-13T11:22:00.000Z"
+    },
+    "departedAt": "2026-04-11T18:00:00.000Z",
+    "eta": "2026-04-13T16:00:00.000Z",
+    "driver": "Pavol Varga",
+    "truck": "TN-628EF",
+    "cargo": "Food products — dry goods — 18 pallets",
+    "weight": "18.5t",
+    "documents": [
+      "cmr",
+      "delivery_note",
+      "customs_declaration"
+    ]
+  },
+  {
+    "id": "ZT-2026-0850",
+    "origin": {
+      "city": "Žilina",
+      "country": "SK",
+      "lat": 49.2231,
+      "lng": 18.7394
+    },
+    "destination": {
+      "city": "Paris",
+      "country": "FR",
+      "lat": 48.8566,
+      "lng": 2.3522
+    },
+    "status": "in_transit",
+    "currentPosition": {
+      "lat": 48.8749,
+      "lng": 3.1716,
+      "updatedAt": "2026-04-13T11:26:00.000Z"
+    },
+    "departedAt": "2026-04-11T18:00:00.000Z",
+    "eta": "2026-04-12T20:00:00.000Z",
+    "driver": "Peter Novák",
+    "truck": "ZA-843AX",
+    "cargo": "Rubber products — 8 pallets",
+    "weight": "21.1t",
+    "documents": [
+      "cmr",
+      "delivery_note",
+      "customs_declaration"
+    ]
+  },
+  {
+    "id": "ZT-2026-0828",
+    "origin": {
+      "city": "Lille",
+      "country": "FR",
+      "lat": 50.6292,
+      "lng": 3.0573
+    },
+    "destination": {
+      "city": "Púchov",
+      "country": "SK",
+      "lat": 49.1205,
+      "lng": 18.3265
+    },
+    "status": "in_transit",
+    "currentPosition": {
+      "lat": 49.1959,
+      "lng": 17.563,
+      "updatedAt": "2026-04-13T11:55:00.000Z"
+    },
+    "departedAt": "2026-04-11T12:00:00.000Z",
+    "eta": "2026-04-13T00:00:00.000Z",
+    "driver": "Andrej Bartoš",
+    "truck": "ZA-156NP",
+    "cargo": "Glass products — 24 pallets",
+    "weight": "18.2t",
+    "documents": [
+      "cmr"
+    ]
+  },
+  {
+    "id": "ZT-2026-0846",
+    "origin": {
+      "city": "Lille",
+      "country": "FR",
+      "lat": 50.6292,
+      "lng": 3.0573
+    },
+    "destination": {
+      "city": "Trnava",
+      "country": "SK",
+      "lat": 48.3774,
+      "lng": 17.5883
+    },
+    "status": "in_transit",
+    "currentPosition": {
+      "lat": 48.8573,
+      "lng": 14.4915,
+      "updatedAt": "2026-04-13T11:30:00.000Z"
+    },
+    "departedAt": "2026-04-11T12:00:00.000Z",
+    "eta": "2026-04-14T01:00:00.000Z",
+    "driver": "Jakub Zahustel",
+    "truck": "ZA-847BK",
+    "cargo": "Food products — dry goods — 24 pallets",
+    "weight": "24.0t",
+    "documents": [
+      "cmr",
+      "delivery_note"
+    ]
+  },
+  {
+    "id": "ZT-2026-0849",
+    "origin": {
+      "city": "Nantes",
+      "country": "FR",
+      "lat": 47.2184,
+      "lng": -1.5536
+    },
+    "destination": {
+      "city": "Nitra",
+      "country": "SK",
+      "lat": 48.3069,
+      "lng": 18.0864
+    },
+    "status": "in_transit",
+    "currentPosition": {
+      "lat": 48.0952,
+      "lng": 14.2675,
+      "updatedAt": "2026-04-13T11:16:00.000Z"
+    },
+    "departedAt": "2026-04-11T02:00:00.000Z",
+    "eta": "2026-04-14T02:00:00.000Z",
+    "driver": "Peter Novák",
+    "truck": "ZA-843AX",
+    "cargo": "Ceramic tiles — 33 pallets",
+    "weight": "12.6t",
+    "documents": [
+      "cmr",
+      "delivery_note",
+      "customs_declaration"
+    ]
+  },
+  {
+    "id": "ZT-2026-0848",
+    "origin": {
+      "city": "Trnava",
+      "country": "SK",
+      "lat": 48.3774,
+      "lng": 17.5883
+    },
+    "destination": {
+      "city": "Nantes",
+      "country": "FR",
+      "lat": 47.2184,
+      "lng": -1.5536
+    },
+    "status": "pending",
+    "currentPosition": null,
+    "departedAt": "2026-04-16T02:00:00.000Z",
+    "eta": "2026-04-18T22:00:00.000Z",
+    "driver": "Andrej Bartoš",
+    "truck": "ZA-156NP",
+    "cargo": "Rubber products — 9 pallets",
+    "weight": "20.4t",
+    "documents": [
+      "cmr"
+    ]
+  },
+  {
+    "id": "ZT-2026-0845",
+    "origin": {
+      "city": "Nantes",
+      "country": "FR",
+      "lat": 47.2184,
+      "lng": -1.5536
+    },
+    "destination": {
+      "city": "Púchov",
+      "country": "SK",
+      "lat": 49.1205,
+      "lng": 18.3265
+    },
+    "status": "pending",
+    "currentPosition": null,
+    "departedAt": "2026-04-15T09:00:00.000Z",
+    "eta": "2026-04-17T01:00:00.000Z",
+    "driver": "Tomáš Horváth",
+    "truck": "TN-512DM",
+    "cargo": "Ceramic tiles — 13 pallets",
+    "weight": "8.8t",
+    "documents": [
+      "cmr"
+    ]
+  },
+  {
+    "id": "ZT-2026-0810",
+    "origin": {
+      "city": "Rennes",
+      "country": "FR",
+      "lat": 48.1173,
+      "lng": -1.6778
+    },
+    "destination": {
+      "city": "Trnava",
+      "country": "SK",
+      "lat": 48.3774,
+      "lng": 17.5883
+    },
+    "status": "pending",
+    "currentPosition": null,
+    "departedAt": "2026-04-15T06:00:00.000Z",
+    "eta": "2026-04-17T15:00:00.000Z",
+    "driver": "Andrej Bartoš",
+    "truck": "ZA-156NP",
+    "cargo": "Paper and printing materials — 8 pallets",
+    "weight": "21.7t",
+    "documents": [
+      "cmr"
+    ]
+  },
+  {
+    "id": "ZT-2026-0823",
+    "origin": {
+      "city": "Púchov",
+      "country": "SK",
+      "lat": 49.1205,
+      "lng": 18.3265
+    },
+    "destination": {
+      "city": "Rennes",
+      "country": "FR",
+      "lat": 48.1173,
+      "lng": -1.6778
+    },
+    "status": "delivered",
+    "currentPosition": null,
+    "departedAt": "2026-04-11T15:02:00.000Z",
+    "eta": "2026-04-14T01:02:00.000Z",
+    "deliveredAt": "2026-04-13T23:02:00.000Z",
+    "driver": "Ján Baláž",
+    "truck": "PP-374GH",
+    "cargo": "Industrial machinery — 8 pallets",
+    "weight": "22.4t",
+    "documents": [
+      "cmr",
+      "delivery_note",
+      "pod"
+    ]
+  },
+  {
+    "id": "ZT-2026-0802",
+    "origin": {
+      "city": "Nitra",
+      "country": "SK",
+      "lat": 48.3069,
+      "lng": 18.0864
+    },
+    "destination": {
+      "city": "Bordeaux",
+      "country": "FR",
+      "lat": 44.8378,
+      "lng": -0.5792
+    },
+    "status": "delivered",
+    "currentPosition": null,
+    "departedAt": "2026-04-10T07:30:00.000Z",
+    "eta": "2026-04-11T20:30:00.000Z",
+    "deliveredAt": "2026-04-11T17:30:00.000Z",
+    "driver": "Ján Baláž",
+    "truck": "PP-374GH",
+    "cargo": "Automotive parts — 24 pallets",
+    "weight": "24.1t",
+    "documents": [
+      "cmr",
+      "delivery_note",
+      "pod"
+    ]
+  },
+  {
+    "id": "ZT-2026-0841",
+    "origin": {
+      "city": "Košice",
+      "country": "SK",
+      "lat": 48.7164,
+      "lng": 21.2611
+    },
+    "destination": {
+      "city": "Bordeaux",
+      "country": "FR",
+      "lat": 44.8378,
+      "lng": -0.5792
+    },
+    "status": "delivered",
+    "currentPosition": null,
+    "departedAt": "2026-04-04T06:14:00.000Z",
+    "eta": "2026-04-05T10:14:00.000Z",
+    "deliveredAt": "2026-04-05T13:14:00.000Z",
+    "driver": "Tomáš Horváth",
+    "truck": "TN-512DM",
+    "cargo": "Consumer electronics — 30 pallets",
+    "weight": "22.2t",
+    "documents": [
+      "cmr",
+      "delivery_note",
+      "pod",
+      "invoice",
+      "customs_declaration"
+    ]
+  },
+  {
+    "id": "ZT-2026-0815",
+    "origin": {
+      "city": "Prešov",
+      "country": "SK",
+      "lat": 48.9967,
+      "lng": 21.2344
+    },
+    "destination": {
+      "city": "Rennes",
+      "country": "FR",
+      "lat": 48.1173,
+      "lng": -1.6778
+    },
+    "status": "delivered",
+    "currentPosition": null,
+    "departedAt": "2026-04-01T10:16:00.000Z",
+    "eta": "2026-04-02T23:16:00.000Z",
+    "deliveredAt": "2026-04-02T20:16:00.000Z",
+    "driver": "Jakub Zahustel",
+    "truck": "ZA-847BK",
+    "cargo": "Glass products — 13 pallets",
+    "weight": "16.9t",
+    "documents": [
+      "cmr",
+      "pod",
+      "invoice"
+    ]
+  },
+  {
+    "id": "ZT-2026-0853",
+    "origin": {
+      "city": "Bratislava",
+      "country": "SK",
+      "lat": 48.1486,
+      "lng": 17.1077
+    },
+    "destination": {
+      "city": "Lille",
+      "country": "FR",
+      "lat": 50.6292,
+      "lng": 3.0573
+    },
+    "status": "delivered",
+    "currentPosition": null,
+    "departedAt": "2026-03-28T07:58:00.000Z",
+    "eta": "2026-03-31T01:58:00.000Z",
+    "deliveredAt": "2026-03-31T07:58:00.000Z",
+    "driver": "Tomáš Horváth",
+    "truck": "TN-512DM",
+    "cargo": "Industrial machinery — 31 pallets",
+    "weight": "12.7t",
+    "documents": [
+      "cmr",
+      "delivery_note",
+      "pod"
+    ]
+  },
+  {
+    "id": "ZT-2026-0860",
+    "origin": {
+      "city": "Žilina",
+      "country": "SK",
+      "lat": 49.2231,
+      "lng": 18.7394
+    },
+    "destination": {
+      "city": "Toulouse",
+      "country": "FR",
+      "lat": 43.6047,
+      "lng": 1.4442
+    },
+    "status": "delivered",
+    "currentPosition": null,
+    "departedAt": "2026-03-26T17:57:00.000Z",
+    "eta": "2026-03-28T19:57:00.000Z",
+    "deliveredAt": "2026-03-28T18:57:00.000Z",
+    "driver": "Peter Novák",
+    "truck": "ZA-843AX",
+    "cargo": "Chemical products — non-hazmat — 19 pallets",
+    "weight": "15.7t",
+    "documents": [
+      "cmr",
+      "delivery_note",
+      "pod"
+    ]
+  },
+  {
+    "id": "ZT-2026-0825",
+    "origin": {
+      "city": "Nitra",
+      "country": "SK",
+      "lat": 48.3069,
+      "lng": 18.0864
+    },
+    "destination": {
+      "city": "Nice",
+      "country": "FR",
+      "lat": 43.7102,
+      "lng": 7.262
+    },
+    "status": "delivered",
+    "currentPosition": null,
+    "departedAt": "2026-03-23T21:01:00.000Z",
+    "eta": "2026-03-26T16:01:00.000Z",
+    "deliveredAt": "2026-03-26T20:01:00.000Z",
+    "driver": "Peter Novák",
+    "truck": "ZA-843AX",
+    "cargo": "Packaging materials — 22 pallets",
+    "weight": "14.5t",
+    "documents": [
+      "cmr",
+      "pod",
+      "invoice"
+    ]
+  },
+  {
+    "id": "ZT-2026-0805",
+    "origin": {
+      "city": "Marseille",
+      "country": "FR",
+      "lat": 43.2965,
+      "lng": 5.3698
+    },
+    "destination": {
+      "city": "Púchov",
+      "country": "SK",
+      "lat": 49.1205,
+      "lng": 18.3265
+    },
+    "status": "delivered",
+    "currentPosition": null,
+    "departedAt": "2026-03-20T11:46:00.000Z",
+    "eta": "2026-03-22T21:46:00.000Z",
+    "deliveredAt": "2026-03-22T21:46:00.000Z",
+    "driver": "Michal Krajčí",
+    "truck": "PP-291KL",
+    "cargo": "Textiles — fabric rolls — 33 pallets",
+    "weight": "8.0t",
+    "documents": [
+      "cmr",
+      "delivery_note",
+      "pod",
+      "invoice",
+      "customs_declaration"
+    ]
+  },
+  {
+    "id": "ZT-2026-0830",
+    "origin": {
+      "city": "Nantes",
+      "country": "FR",
+      "lat": 47.2184,
+      "lng": -1.5536
+    },
+    "destination": {
+      "city": "Bratislava",
+      "country": "SK",
+      "lat": 48.1486,
+      "lng": 17.1077
+    },
+    "status": "delivered",
+    "currentPosition": null,
+    "departedAt": "2026-03-18T21:18:00.000Z",
+    "eta": "2026-03-20T17:18:00.000Z",
+    "deliveredAt": "2026-03-20T17:18:00.000Z",
+    "driver": "Tomáš Horváth",
+    "truck": "TN-512DM",
+    "cargo": "Automotive parts — 30 pallets",
+    "weight": "15.7t",
+    "documents": [
+      "cmr",
+      "delivery_note",
+      "pod",
+      "invoice"
+    ]
+  },
+  {
+    "id": "ZT-2026-0806",
+    "origin": {
+      "city": "Košice",
+      "country": "SK",
+      "lat": 48.7164,
+      "lng": 21.2611
+    },
+    "destination": {
+      "city": "Strasbourg",
+      "country": "FR",
+      "lat": 48.5734,
+      "lng": 7.7521
+    },
+    "status": "delivered",
+    "currentPosition": null,
+    "departedAt": "2026-03-12T21:41:00.000Z",
+    "eta": "2026-03-14T05:41:00.000Z",
+    "deliveredAt": "2026-03-14T05:41:00.000Z",
+    "driver": "Marek Szabó",
+    "truck": "TN-803RS",
+    "cargo": "Automotive parts — 8 pallets",
+    "weight": "8.6t",
+    "documents": [
+      "cmr",
+      "delivery_note",
+      "pod"
+    ]
+  },
+  {
+    "id": "ZT-2026-0834",
+    "origin": {
+      "city": "Nice",
+      "country": "FR",
+      "lat": 43.7102,
+      "lng": 7.262
+    },
+    "destination": {
+      "city": "Košice",
+      "country": "SK",
+      "lat": 48.7164,
+      "lng": 21.2611
+    },
+    "status": "delivered",
+    "currentPosition": null,
+    "departedAt": "2026-03-10T06:08:00.000Z",
+    "eta": "2026-03-12T23:08:00.000Z",
+    "deliveredAt": "2026-03-12T20:08:00.000Z",
+    "driver": "Ján Baláž",
+    "truck": "PP-374GH",
+    "cargo": "Chemical products — non-hazmat — 31 pallets",
+    "weight": "11.4t",
+    "documents": [
+      "cmr",
+      "pod",
+      "invoice"
+    ]
+  },
+  {
+    "id": "ZT-2026-0803",
+    "origin": {
+      "city": "Žilina",
+      "country": "SK",
+      "lat": 49.2231,
+      "lng": 18.7394
+    },
+    "destination": {
+      "city": "Rennes",
+      "country": "FR",
+      "lat": 48.1173,
+      "lng": -1.6778
+    },
+    "status": "delivered",
+    "currentPosition": null,
+    "departedAt": "2026-02-26T11:47:00.000Z",
+    "eta": "2026-02-28T06:47:00.000Z",
+    "deliveredAt": "2026-02-28T05:47:00.000Z",
+    "driver": "Pavol Varga",
+    "truck": "TN-628EF",
+    "cargo": "Chemical products — non-hazmat — 17 pallets",
+    "weight": "23.6t",
+    "documents": [
+      "cmr",
+      "delivery_note",
+      "pod"
+    ]
+  },
+  {
+    "id": "ZT-2026-0811",
+    "origin": {
+      "city": "Košice",
+      "country": "SK",
+      "lat": 48.7164,
+      "lng": 21.2611
+    },
+    "destination": {
+      "city": "Strasbourg",
+      "country": "FR",
+      "lat": 48.5734,
+      "lng": 7.7521
+    },
+    "status": "delivered",
+    "currentPosition": null,
+    "departedAt": "2026-02-14T20:33:00.000Z",
+    "eta": "2026-02-17T09:33:00.000Z",
+    "deliveredAt": "2026-02-17T05:33:00.000Z",
+    "driver": "Marek Szabó",
+    "truck": "TN-803RS",
+    "cargo": "Furniture components — 16 pallets",
+    "weight": "8.8t",
+    "documents": [
+      "cmr",
+      "delivery_note",
+      "pod"
+    ]
+  },
+  {
+    "id": "ZT-2026-0851",
+    "origin": {
+      "city": "Nice",
+      "country": "FR",
+      "lat": 43.7102,
+      "lng": 7.262
+    },
+    "destination": {
+      "city": "Prešov",
+      "country": "SK",
+      "lat": 48.9967,
+      "lng": 21.2344
+    },
+    "status": "delivered",
+    "currentPosition": null,
+    "departedAt": "2026-02-14T08:27:00.000Z",
+    "eta": "2026-02-16T16:27:00.000Z",
+    "deliveredAt": "2026-02-16T22:27:00.000Z",
+    "driver": "Peter Novák",
+    "truck": "ZA-843AX",
+    "cargo": "Chemical products — non-hazmat — 26 pallets",
+    "weight": "22.2t",
+    "documents": [
+      "cmr",
+      "delivery_note",
+      "pod",
+      "invoice"
+    ]
+  },
+  {
+    "id": "ZT-2026-0858",
+    "origin": {
+      "city": "Bratislava",
+      "country": "SK",
+      "lat": 48.1486,
+      "lng": 17.1077
+    },
+    "destination": {
+      "city": "Lyon",
+      "country": "FR",
+      "lat": 45.764,
+      "lng": 4.8357
+    },
+    "status": "delivered",
+    "currentPosition": null,
+    "departedAt": "2026-02-09T10:37:00.000Z",
+    "eta": "2026-02-11T23:37:00.000Z",
+    "deliveredAt": "2026-02-12T01:37:00.000Z",
+    "driver": "Ján Baláž",
+    "truck": "PP-374GH",
+    "cargo": "Packaging materials — 31 pallets",
+    "weight": "17.8t",
+    "documents": [
+      "cmr",
+      "delivery_note",
+      "pod"
+    ]
+  },
+  {
+    "id": "ZT-2026-0856",
+    "origin": {
+      "city": "Košice",
+      "country": "SK",
+      "lat": 48.7164,
+      "lng": 21.2611
+    },
+    "destination": {
+      "city": "Nantes",
+      "country": "FR",
+      "lat": 47.2184,
+      "lng": -1.5536
+    },
+    "status": "delivered",
+    "currentPosition": null,
+    "departedAt": "2026-02-02T08:33:00.000Z",
+    "eta": "2026-02-05T02:33:00.000Z",
+    "deliveredAt": "2026-02-05T03:33:00.000Z",
+    "driver": "Pavol Varga",
+    "truck": "TN-628EF",
+    "cargo": "Ceramic tiles — 12 pallets",
+    "weight": "13.4t",
+    "documents": [
+      "cmr",
+      "pod",
+      "invoice"
+    ]
+  },
+  {
+    "id": "ZT-2026-0855",
+    "origin": {
+      "city": "Marseille",
+      "country": "FR",
+      "lat": 43.2965,
+      "lng": 5.3698
+    },
+    "destination": {
+      "city": "Bratislava",
+      "country": "SK",
+      "lat": 48.1486,
+      "lng": 17.1077
+    },
+    "status": "delivered",
+    "currentPosition": null,
+    "departedAt": "2026-01-30T18:00:00.000Z",
+    "eta": "2026-01-31T22:00:00.000Z",
+    "deliveredAt": "2026-01-31T21:00:00.000Z",
+    "driver": "Pavol Varga",
+    "truck": "TN-628EF",
+    "cargo": "Chemical products — non-hazmat — 25 pallets",
+    "weight": "12.8t",
+    "documents": [
+      "cmr",
+      "delivery_note",
+      "pod",
+      "invoice"
+    ]
+  },
+  {
+    "id": "ZT-2026-0842",
+    "origin": {
+      "city": "Strasbourg",
+      "country": "FR",
+      "lat": 48.5734,
+      "lng": 7.7521
+    },
+    "destination": {
+      "city": "Nitra",
+      "country": "SK",
+      "lat": 48.3069,
+      "lng": 18.0864
+    },
+    "status": "delivered",
+    "currentPosition": null,
+    "departedAt": "2026-01-28T07:46:00.000Z",
+    "eta": "2026-01-29T08:46:00.000Z",
+    "deliveredAt": "2026-01-29T07:46:00.000Z",
+    "driver": "Andrej Bartoš",
+    "truck": "ZA-156NP",
+    "cargo": "Glass products — 26 pallets",
+    "weight": "22.7t",
+    "documents": [
+      "cmr",
+      "delivery_note",
+      "pod",
+      "invoice"
+    ]
+  },
+  {
+    "id": "ZT-2026-0857",
+    "origin": {
+      "city": "Lyon",
+      "country": "FR",
+      "lat": 45.764,
+      "lng": 4.8357
+    },
+    "destination": {
+      "city": "Košice",
+      "country": "SK",
+      "lat": 48.7164,
+      "lng": 21.2611
+    },
+    "status": "delivered",
+    "currentPosition": null,
+    "departedAt": "2026-01-21T07:25:00.000Z",
+    "eta": "2026-01-22T22:25:00.000Z",
+    "deliveredAt": "2026-01-23T01:25:00.000Z",
+    "driver": "Andrej Bartoš",
+    "truck": "ZA-156NP",
+    "cargo": "Food products — dry goods — 26 pallets",
+    "weight": "12.0t",
+    "documents": [
+      "cmr",
+      "delivery_note",
+      "pod",
+      "invoice"
+    ]
+  },
+  {
+    "id": "ZT-2026-0844",
+    "origin": {
+      "city": "Košice",
+      "country": "SK",
+      "lat": 48.7164,
+      "lng": 21.2611
+    },
+    "destination": {
+      "city": "Marseille",
+      "country": "FR",
+      "lat": 43.2965,
+      "lng": 5.3698
+    },
+    "status": "delivered",
+    "currentPosition": null,
+    "departedAt": "2026-01-17T03:40:00.000Z",
+    "eta": "2026-01-18T07:40:00.000Z",
+    "deliveredAt": "2026-01-18T03:40:00.000Z",
+    "driver": "Ján Baláž",
+    "truck": "PP-374GH",
+    "cargo": "Plastic granules — 15 pallets",
+    "weight": "23.9t",
+    "documents": [
+      "cmr",
+      "pod",
+      "invoice"
+    ]
+  },
+  {
+    "id": "ZT-2026-0819",
+    "origin": {
+      "city": "Toulouse",
+      "country": "FR",
+      "lat": 43.6047,
+      "lng": 1.4442
+    },
+    "destination": {
+      "city": "Bratislava",
+      "country": "SK",
+      "lat": 48.1486,
+      "lng": 17.1077
+    },
+    "status": "delivered",
+    "currentPosition": null,
+    "departedAt": "2026-01-07T12:37:00.000Z",
+    "eta": "2026-01-10T01:37:00.000Z",
+    "deliveredAt": "2026-01-09T21:37:00.000Z",
+    "driver": "Andrej Bartoš",
+    "truck": "ZA-156NP",
+    "cargo": "Paper and printing materials — 32 pallets",
+    "weight": "16.3t",
+    "documents": [
+      "cmr",
+      "delivery_note",
+      "pod",
+      "invoice"
+    ]
+  },
+  {
+    "id": "ZT-2026-0835",
+    "origin": {
+      "city": "Bratislava",
+      "country": "SK",
+      "lat": 48.1486,
+      "lng": 17.1077
+    },
+    "destination": {
+      "city": "Bordeaux",
+      "country": "FR",
+      "lat": 44.8378,
+      "lng": -0.5792
+    },
+    "status": "delivered",
+    "currentPosition": null,
+    "departedAt": "2026-01-02T20:38:00.000Z",
+    "eta": "2026-01-05T07:38:00.000Z",
+    "deliveredAt": "2026-01-05T11:38:00.000Z",
+    "driver": "Martin Kováč",
+    "truck": "ZA-839CJ",
+    "cargo": "Plastic granules — 30 pallets",
+    "weight": "22.8t",
+    "documents": [
+      "cmr",
+      "delivery_note",
+      "pod"
+    ]
+  },
+  {
+    "id": "ZT-2026-0818",
+    "origin": {
+      "city": "Bratislava",
+      "country": "SK",
+      "lat": 48.1486,
+      "lng": 17.1077
+    },
+    "destination": {
+      "city": "Paris",
+      "country": "FR",
+      "lat": 48.8566,
+      "lng": 2.3522
+    },
+    "status": "delivered",
+    "currentPosition": null,
+    "departedAt": "2026-01-02T06:22:00.000Z",
+    "eta": "2026-01-04T04:22:00.000Z",
+    "deliveredAt": "2026-01-04T07:22:00.000Z",
+    "driver": "Michal Krajčí",
+    "truck": "PP-291KL",
+    "cargo": "Rubber products — 13 pallets",
+    "weight": "17.5t",
+    "documents": [
+      "cmr",
+      "delivery_note",
+      "pod"
+    ]
+  },
+  {
+    "id": "ZT-2026-0808",
+    "origin": {
+      "city": "Prešov",
+      "country": "SK",
+      "lat": 48.9967,
+      "lng": 21.2344
+    },
+    "destination": {
+      "city": "Nantes",
+      "country": "FR",
+      "lat": 47.2184,
+      "lng": -1.5536
+    },
+    "status": "delivered",
+    "currentPosition": null,
+    "departedAt": "2026-01-02T04:17:00.000Z",
+    "eta": "2026-01-04T13:17:00.000Z",
+    "deliveredAt": "2026-01-04T13:17:00.000Z",
+    "driver": "Marek Szabó",
+    "truck": "TN-803RS",
+    "cargo": "Textiles — fabric rolls — 19 pallets",
+    "weight": "10.3t",
+    "documents": [
+      "cmr",
+      "pod",
+      "invoice"
+    ]
+  },
+  {
+    "id": "ZT-2026-0817",
+    "origin": {
+      "city": "Nitra",
+      "country": "SK",
+      "lat": 48.3069,
+      "lng": 18.0864
+    },
+    "destination": {
+      "city": "Lyon",
+      "country": "FR",
+      "lat": 45.764,
+      "lng": 4.8357
+    },
+    "status": "delivered",
+    "currentPosition": null,
+    "departedAt": "2025-12-28T19:35:00.000Z",
+    "eta": "2025-12-29T23:35:00.000Z",
+    "deliveredAt": "2025-12-29T19:35:00.000Z",
+    "driver": "Michal Krajčí",
+    "truck": "PP-291KL",
+    "cargo": "Industrial machinery — 28 pallets",
+    "weight": "8.1t",
+    "documents": [
+      "cmr",
+      "pod",
+      "invoice"
+    ]
+  },
+  {
+    "id": "ZT-2026-0832",
+    "origin": {
+      "city": "Paris",
+      "country": "FR",
+      "lat": 48.8566,
+      "lng": 2.3522
+    },
+    "destination": {
+      "city": "Bratislava",
+      "country": "SK",
+      "lat": 48.1486,
+      "lng": 17.1077
+    },
+    "status": "delivered",
+    "currentPosition": null,
+    "departedAt": "2025-12-19T11:55:00.000Z",
+    "eta": "2025-12-21T19:55:00.000Z",
+    "deliveredAt": "2025-12-22T01:55:00.000Z",
+    "driver": "Ján Baláž",
+    "truck": "PP-374GH",
+    "cargo": "Food products — dry goods — 9 pallets",
+    "weight": "25.0t",
+    "documents": [
+      "cmr",
+      "delivery_note",
+      "pod",
+      "invoice"
+    ]
+  },
+  {
+    "id": "ZT-2026-0814",
+    "origin": {
+      "city": "Trnava",
+      "country": "SK",
+      "lat": 48.3774,
+      "lng": 17.5883
+    },
+    "destination": {
+      "city": "Strasbourg",
+      "country": "FR",
+      "lat": 48.5734,
+      "lng": 7.7521
+    },
+    "status": "delivered",
+    "currentPosition": null,
+    "departedAt": "2025-12-15T05:46:00.000Z",
+    "eta": "2025-12-17T08:46:00.000Z",
+    "deliveredAt": "2025-12-17T05:46:00.000Z",
+    "driver": "Andrej Bartoš",
+    "truck": "ZA-156NP",
+    "cargo": "Industrial machinery — 19 pallets",
+    "weight": "20.2t",
+    "documents": [
+      "cmr",
+      "delivery_note",
+      "pod",
+      "invoice"
+    ]
+  },
+  {
+    "id": "ZT-2026-0809",
+    "origin": {
+      "city": "Bratislava",
+      "country": "SK",
+      "lat": 48.1486,
+      "lng": 17.1077
+    },
+    "destination": {
+      "city": "Bordeaux",
+      "country": "FR",
+      "lat": 44.8378,
+      "lng": -0.5792
+    },
+    "status": "delivered",
+    "currentPosition": null,
+    "departedAt": "2025-12-13T09:36:00.000Z",
+    "eta": "2025-12-15T17:36:00.000Z",
+    "deliveredAt": "2025-12-15T17:36:00.000Z",
+    "driver": "Michal Krajčí",
+    "truck": "PP-291KL",
+    "cargo": "Chemical products — non-hazmat — 8 pallets",
+    "weight": "17.1t",
+    "documents": [
+      "cmr",
+      "pod",
+      "invoice"
+    ]
+  },
+  {
+    "id": "ZT-2026-0813",
+    "origin": {
+      "city": "Bratislava",
+      "country": "SK",
+      "lat": 48.1486,
+      "lng": 17.1077
+    },
+    "destination": {
+      "city": "Bordeaux",
+      "country": "FR",
+      "lat": 44.8378,
+      "lng": -0.5792
+    },
+    "status": "delivered",
+    "currentPosition": null,
+    "departedAt": "2025-12-12T07:19:00.000Z",
+    "eta": "2025-12-13T13:19:00.000Z",
+    "deliveredAt": "2025-12-13T09:19:00.000Z",
+    "driver": "Michal Krajčí",
+    "truck": "PP-291KL",
+    "cargo": "Paper and printing materials — 17 pallets",
+    "weight": "10.7t",
+    "documents": [
+      "cmr",
+      "delivery_note",
+      "pod",
+      "invoice"
+    ]
+  },
+  {
+    "id": "ZT-2026-0837",
+    "origin": {
+      "city": "Nitra",
+      "country": "SK",
+      "lat": 48.3069,
+      "lng": 18.0864
+    },
+    "destination": {
+      "city": "Lyon",
+      "country": "FR",
+      "lat": 45.764,
+      "lng": 4.8357
+    },
+    "status": "delivered",
+    "currentPosition": null,
+    "departedAt": "2025-12-11T21:58:00.000Z",
+    "eta": "2025-12-13T03:58:00.000Z",
+    "deliveredAt": "2025-12-12T23:58:00.000Z",
+    "driver": "Jakub Zahustel",
+    "truck": "ZA-847BK",
+    "cargo": "Steel components — 32 pallets",
+    "weight": "21.7t",
+    "documents": [
+      "cmr",
+      "delivery_note",
+      "pod"
+    ]
+  },
+  {
+    "id": "ZT-2026-0822",
+    "origin": {
+      "city": "Košice",
+      "country": "SK",
+      "lat": 48.7164,
+      "lng": 21.2611
+    },
+    "destination": {
+      "city": "Lille",
+      "country": "FR",
+      "lat": 50.6292,
+      "lng": 3.0573
+    },
+    "status": "delivered",
+    "currentPosition": null,
+    "departedAt": "2025-12-05T04:30:00.000Z",
+    "eta": "2025-12-07T07:30:00.000Z",
+    "deliveredAt": "2025-12-07T07:30:00.000Z",
+    "driver": "Michal Krajčí",
+    "truck": "PP-291KL",
+    "cargo": "Rubber products — 18 pallets",
+    "weight": "12.8t",
+    "documents": [
+      "cmr",
+      "delivery_note",
+      "pod"
+    ]
+  },
+  {
+    "id": "ZT-2026-0840",
+    "origin": {
+      "city": "Žilina",
+      "country": "SK",
+      "lat": 49.2231,
+      "lng": 18.7394
+    },
+    "destination": {
+      "city": "Rennes",
+      "country": "FR",
+      "lat": 48.1173,
+      "lng": -1.6778
+    },
+    "status": "delivered",
+    "currentPosition": null,
+    "departedAt": "2025-11-24T18:34:00.000Z",
+    "eta": "2025-11-27T02:34:00.000Z",
+    "deliveredAt": "2025-11-27T01:34:00.000Z",
+    "driver": "Jakub Zahustel",
+    "truck": "ZA-847BK",
+    "cargo": "Automotive parts — 23 pallets",
+    "weight": "14.6t",
+    "documents": [
+      "cmr",
+      "delivery_note",
+      "pod",
+      "invoice",
+      "customs_declaration"
+    ]
+  },
+  {
+    "id": "ZT-2026-0854",
+    "origin": {
+      "city": "Púchov",
+      "country": "SK",
+      "lat": 49.1205,
+      "lng": 18.3265
+    },
+    "destination": {
+      "city": "Rennes",
+      "country": "FR",
+      "lat": 48.1173,
+      "lng": -1.6778
+    },
+    "status": "delivered",
+    "currentPosition": null,
+    "departedAt": "2025-11-23T14:12:00.000Z",
+    "eta": "2025-11-25T11:12:00.000Z",
+    "deliveredAt": "2025-11-25T15:12:00.000Z",
+    "driver": "Martin Kováč",
+    "truck": "ZA-839CJ",
+    "cargo": "Furniture components — 14 pallets",
+    "weight": "21.6t",
+    "documents": [
+      "cmr",
+      "delivery_note",
+      "pod",
+      "invoice",
+      "customs_declaration"
+    ]
+  },
+  {
+    "id": "ZT-2026-0812",
+    "origin": {
+      "city": "Trnava",
+      "country": "SK",
+      "lat": 48.3774,
+      "lng": 17.5883
+    },
+    "destination": {
+      "city": "Marseille",
+      "country": "FR",
+      "lat": 43.2965,
+      "lng": 5.3698
+    },
+    "status": "delivered",
+    "currentPosition": null,
+    "departedAt": "2025-11-21T21:43:00.000Z",
+    "eta": "2025-11-24T11:43:00.000Z",
+    "deliveredAt": "2025-11-24T07:43:00.000Z",
+    "driver": "Martin Kováč",
+    "truck": "ZA-839CJ",
+    "cargo": "Chemical products — non-hazmat — 8 pallets",
+    "weight": "17.7t",
+    "documents": [
+      "cmr",
+      "delivery_note",
+      "pod",
+      "invoice",
+      "customs_declaration"
+    ]
+  },
+  {
+    "id": "ZT-2026-0826",
+    "origin": {
+      "city": "Košice",
+      "country": "SK",
+      "lat": 48.7164,
+      "lng": 21.2611
+    },
+    "destination": {
+      "city": "Nice",
+      "country": "FR",
+      "lat": 43.7102,
+      "lng": 7.262
+    },
+    "status": "delivered",
+    "currentPosition": null,
+    "departedAt": "2025-11-21T12:21:00.000Z",
+    "eta": "2025-11-23T18:21:00.000Z",
+    "deliveredAt": "2025-11-23T22:21:00.000Z",
+    "driver": "Tomáš Horváth",
+    "truck": "TN-512DM",
+    "cargo": "Industrial machinery — 15 pallets",
+    "weight": "12.0t",
+    "documents": [
+      "cmr",
+      "delivery_note",
+      "pod",
+      "invoice",
+      "customs_declaration"
+    ]
+  },
+  {
+    "id": "ZT-2026-0838",
+    "origin": {
+      "city": "Žilina",
+      "country": "SK",
+      "lat": 49.2231,
+      "lng": 18.7394
+    },
+    "destination": {
+      "city": "Paris",
+      "country": "FR",
+      "lat": 48.8566,
+      "lng": 2.3522
+    },
+    "status": "delivered",
+    "currentPosition": null,
+    "departedAt": "2025-11-19T17:16:00.000Z",
+    "eta": "2025-11-22T17:16:00.000Z",
+    "deliveredAt": "2025-11-22T19:16:00.000Z",
+    "driver": "Michal Krajčí",
+    "truck": "PP-291KL",
+    "cargo": "Ceramic tiles — 26 pallets",
+    "weight": "12.9t",
+    "documents": [
+      "cmr",
+      "pod",
+      "invoice"
+    ]
+  },
+  {
+    "id": "ZT-2026-0836",
+    "origin": {
+      "city": "Nantes",
+      "country": "FR",
+      "lat": 47.2184,
+      "lng": -1.5536
+    },
+    "destination": {
+      "city": "Bratislava",
+      "country": "SK",
+      "lat": 48.1486,
+      "lng": 17.1077
+    },
+    "status": "delivered",
+    "currentPosition": null,
+    "departedAt": "2025-11-14T03:29:00.000Z",
+    "eta": "2025-11-15T23:29:00.000Z",
+    "deliveredAt": "2025-11-15T20:29:00.000Z",
+    "driver": "Jakub Zahustel",
+    "truck": "ZA-847BK",
+    "cargo": "Consumer electronics — 30 pallets",
+    "weight": "9.6t",
+    "documents": [
+      "cmr",
+      "delivery_note",
+      "pod",
+      "invoice",
+      "customs_declaration"
+    ]
+  },
+  {
+    "id": "ZT-2026-0847",
+    "origin": {
+      "city": "Nitra",
+      "country": "SK",
+      "lat": 48.3069,
+      "lng": 18.0864
+    },
+    "destination": {
+      "city": "Rennes",
+      "country": "FR",
+      "lat": 48.1173,
+      "lng": -1.6778
+    },
+    "status": "delivered",
+    "currentPosition": null,
+    "departedAt": "2025-11-11T06:22:00.000Z",
+    "eta": "2025-11-13T16:22:00.000Z",
+    "deliveredAt": "2025-11-13T19:22:00.000Z",
+    "driver": "Peter Novák",
+    "truck": "ZA-843AX",
+    "cargo": "Automotive parts — 12 pallets",
+    "weight": "22.0t",
+    "documents": [
+      "cmr",
+      "delivery_note",
+      "pod",
+      "invoice"
+    ]
+  },
+  {
+    "id": "ZT-2026-0816",
+    "origin": {
+      "city": "Košice",
+      "country": "SK",
+      "lat": 48.7164,
+      "lng": 21.2611
+    },
+    "destination": {
+      "city": "Nantes",
+      "country": "FR",
+      "lat": 47.2184,
+      "lng": -1.5536
+    },
+    "status": "delivered",
+    "currentPosition": null,
+    "departedAt": "2025-11-09T15:22:00.000Z",
+    "eta": "2025-11-11T09:22:00.000Z",
+    "deliveredAt": "2025-11-11T12:22:00.000Z",
+    "driver": "Ján Baláž",
+    "truck": "PP-374GH",
+    "cargo": "Glass products — 26 pallets",
+    "weight": "12.3t",
+    "documents": [
+      "cmr",
+      "pod",
+      "invoice"
+    ]
+  },
+  {
+    "id": "ZT-2026-0801",
+    "origin": {
+      "city": "Prešov",
+      "country": "SK",
+      "lat": 48.9967,
+      "lng": 21.2344
+    },
+    "destination": {
+      "city": "Paris",
+      "country": "FR",
+      "lat": 48.8566,
+      "lng": 2.3522
+    },
+    "status": "delivered",
+    "currentPosition": null,
+    "departedAt": "2025-11-07T03:42:00.000Z",
+    "eta": "2025-11-08T13:42:00.000Z",
+    "deliveredAt": "2025-11-08T09:42:00.000Z",
+    "driver": "Michal Krajčí",
+    "truck": "PP-291KL",
+    "cargo": "Plastic granules — 23 pallets",
+    "weight": "25.0t",
+    "documents": [
+      "cmr",
+      "pod",
+      "invoice"
+    ]
+  },
+  {
+    "id": "ZT-2026-0820",
+    "origin": {
+      "city": "Prešov",
+      "country": "SK",
+      "lat": 48.9967,
+      "lng": 21.2344
+    },
+    "destination": {
+      "city": "Nice",
+      "country": "FR",
+      "lat": 43.7102,
+      "lng": 7.262
+    },
+    "status": "delivered",
+    "currentPosition": null,
+    "departedAt": "2025-11-06T11:54:00.000Z",
+    "eta": "2025-11-07T18:54:00.000Z",
+    "deliveredAt": "2025-11-07T16:54:00.000Z",
+    "driver": "Andrej Bartoš",
+    "truck": "ZA-156NP",
+    "cargo": "Ceramic tiles — 23 pallets",
+    "weight": "16.9t",
+    "documents": [
+      "cmr",
+      "pod",
+      "invoice"
+    ]
+  },
+  {
+    "id": "ZT-2026-0859",
+    "origin": {
+      "city": "Košice",
+      "country": "SK",
+      "lat": 48.7164,
+      "lng": 21.2611
+    },
+    "destination": {
+      "city": "Rennes",
+      "country": "FR",
+      "lat": 48.1173,
+      "lng": -1.6778
+    },
+    "status": "delivered",
+    "currentPosition": null,
+    "departedAt": "2025-11-02T11:52:00.000Z",
+    "eta": "2025-11-04T18:52:00.000Z",
+    "deliveredAt": "2025-11-04T19:52:00.000Z",
+    "driver": "Andrej Bartoš",
+    "truck": "ZA-156NP",
+    "cargo": "Chemical products — non-hazmat — 8 pallets",
+    "weight": "15.6t",
+    "documents": [
+      "cmr",
+      "pod",
+      "invoice"
+    ]
+  },
+  {
+    "id": "ZT-2026-0831",
+    "origin": {
+      "city": "Púchov",
+      "country": "SK",
+      "lat": 49.1205,
+      "lng": 18.3265
+    },
+    "destination": {
+      "city": "Nice",
+      "country": "FR",
+      "lat": 43.7102,
+      "lng": 7.262
+    },
+    "status": "delivered",
+    "currentPosition": null,
+    "departedAt": "2025-11-01T04:16:00.000Z",
+    "eta": "2025-11-02T15:16:00.000Z",
+    "deliveredAt": "2025-11-02T16:16:00.000Z",
+    "driver": "Marek Szabó",
+    "truck": "TN-803RS",
+    "cargo": "Plastic granules — 18 pallets",
+    "weight": "14.8t",
+    "documents": [
+      "cmr",
+      "delivery_note",
+      "pod"
+    ]
+  },
+  {
+    "id": "ZT-2026-0852",
+    "origin": {
+      "city": "Žilina",
+      "country": "SK",
+      "lat": 49.2231,
+      "lng": 18.7394
+    },
+    "destination": {
+      "city": "Rennes",
+      "country": "FR",
+      "lat": 48.1173,
+      "lng": -1.6778
+    },
+    "status": "delivered",
+    "currentPosition": null,
+    "departedAt": "2025-10-31T03:39:00.000Z",
+    "eta": "2025-11-01T06:39:00.000Z",
+    "deliveredAt": "2025-11-01T06:39:00.000Z",
+    "driver": "Peter Novák",
+    "truck": "ZA-843AX",
+    "cargo": "Paper and printing materials — 13 pallets",
+    "weight": "10.6t",
+    "documents": [
+      "cmr",
+      "delivery_note",
+      "pod",
+      "invoice"
+    ]
+  },
+  {
+    "id": "ZT-2026-0807",
+    "origin": {
+      "city": "Lyon",
+      "country": "FR",
+      "lat": 45.764,
+      "lng": 4.8357
+    },
+    "destination": {
+      "city": "Bratislava",
+      "country": "SK",
+      "lat": 48.1486,
+      "lng": 17.1077
+    },
+    "status": "delivered",
+    "currentPosition": null,
+    "departedAt": "2025-10-29T05:19:00.000Z",
+    "eta": "2025-10-30T16:19:00.000Z",
+    "deliveredAt": "2025-10-30T14:19:00.000Z",
+    "driver": "Michal Krajčí",
+    "truck": "PP-291KL",
+    "cargo": "Food products — dry goods — 10 pallets",
+    "weight": "21.8t",
+    "documents": [
+      "cmr",
+      "delivery_note",
+      "pod",
+      "invoice",
+      "customs_declaration"
+    ]
+  },
+  {
+    "id": "ZT-2026-0829",
+    "origin": {
+      "city": "Bratislava",
+      "country": "SK",
+      "lat": 48.1486,
+      "lng": 17.1077
+    },
+    "destination": {
+      "city": "Bordeaux",
+      "country": "FR",
+      "lat": 44.8378,
+      "lng": -0.5792
+    },
+    "status": "delivered",
+    "currentPosition": null,
+    "departedAt": "2025-10-20T12:41:00.000Z",
+    "eta": "2025-10-22T13:41:00.000Z",
+    "deliveredAt": "2025-10-22T11:41:00.000Z",
+    "driver": "Jakub Zahustel",
+    "truck": "ZA-847BK",
+    "cargo": "Chemical products — non-hazmat — 17 pallets",
+    "weight": "9.7t",
+    "documents": [
+      "cmr",
+      "delivery_note",
+      "pod",
+      "invoice",
+      "customs_declaration"
+    ]
+  },
+  {
+    "id": "ZT-2026-0804",
+    "origin": {
+      "city": "Strasbourg",
+      "country": "FR",
+      "lat": 48.5734,
+      "lng": 7.7521
+    },
+    "destination": {
+      "city": "Žilina",
+      "country": "SK",
+      "lat": 49.2231,
+      "lng": 18.7394
+    },
+    "status": "delivered",
+    "currentPosition": null,
+    "departedAt": "2025-10-18T10:02:00.000Z",
+    "eta": "2025-10-21T03:02:00.000Z",
+    "deliveredAt": "2025-10-21T00:02:00.000Z",
+    "driver": "Andrej Bartoš",
+    "truck": "ZA-156NP",
+    "cargo": "Industrial machinery — 26 pallets",
+    "weight": "8.9t",
+    "documents": [
+      "cmr",
+      "delivery_note",
+      "pod",
+      "invoice"
+    ]
+  }
+]

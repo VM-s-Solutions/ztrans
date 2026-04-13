@@ -1,0 +1,258 @@
+.detail-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 24px;
+  gap: 16px;
+}
+
+.detail-route {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 15px;
+  color: var(--zt-gray-700);
+
+  .material-icons {
+    font-size: 18px;
+    color: var(--zt-blue);
+  }
+}
+
+.detail-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+.map-link {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  background: var(--zt-blue);
+  color: var(--zt-white);
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: background 0.15s;
+
+  &:hover {
+    background: var(--zt-blue-dark);
+    text-decoration: none;
+  }
+
+  .material-icons { font-size: 18px; }
+}
+
+// Timeline
+.timeline-card {
+  margin-bottom: 24px;
+}
+
+.timeline {
+  display: flex;
+  align-items: flex-start;
+  gap: 0;
+}
+
+.timeline-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+  position: relative;
+}
+
+.timeline-dot {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--zt-gray-200);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+  transition: all 0.3s;
+
+  .material-icons {
+    font-size: 20px;
+    color: var(--zt-gray-500);
+  }
+
+  .done & {
+    background: var(--zt-blue);
+
+    .material-icons { color: var(--zt-white); }
+  }
+}
+
+.timeline-line {
+  position: absolute;
+  top: 22px;
+  left: calc(50% + 22px);
+  right: calc(-50% + 22px);
+  height: 3px;
+  background: var(--zt-gray-200);
+
+  .done & {
+    background: var(--zt-blue);
+  }
+}
+
+.timeline-label {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.step-name {
+  display: block;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--zt-gray-700);
+
+  .done & { color: var(--zt-dark); }
+}
+
+.step-date {
+  display: block;
+  font-size: 11px;
+  color: var(--zt-gray-500);
+  margin-top: 2px;
+}
+
+// Info grid
+.detail-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.info-item {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.info-label {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--zt-gray-500);
+}
+
+.info-value {
+  font-size: 14px;
+  color: var(--zt-gray-900);
+  font-weight: 500;
+}
+
+.eta-value { color: var(--zt-blue); font-weight: 700; }
+.delivered-value { color: var(--zt-success); font-weight: 700; }
+
+// Documents
+.doc-list {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.doc-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  border-radius: 6px;
+  transition: background 0.15s;
+
+  &:hover { background: var(--zt-gray-50); }
+}
+
+.doc-icon {
+  font-size: 22px;
+  color: var(--zt-blue);
+}
+
+.doc-info {
+  flex: 1;
+}
+
+.doc-name {
+  display: block;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--zt-dark);
+}
+
+.doc-ref {
+  display: block;
+  font-size: 11px;
+  color: var(--zt-gray-500);
+}
+
+.doc-download {
+  background: transparent;
+  border: 1px solid var(--zt-gray-200);
+  border-radius: 6px;
+  padding: 6px;
+  cursor: pointer;
+  color: var(--zt-gray-700);
+  transition: all 0.15s;
+
+  &:hover {
+    background: var(--zt-blue);
+    color: var(--zt-white);
+    border-color: var(--zt-blue);
+  }
+
+  .material-icons { font-size: 18px; }
+}
+
+@media (max-width: 768px) {
+  .detail-header {
+    flex-direction: column;
+  }
+
+  .detail-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .info-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .timeline {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .timeline-step {
+    flex-direction: row;
+    gap: 12px;
+    padding: 8px 0;
+  }
+
+  .timeline-line {
+    position: absolute;
+    top: calc(50% + 22px);
+    bottom: calc(-50% + 22px);
+    left: 21px;
+    right: auto;
+    width: 3px;
+    height: auto;
+  }
+
+  .timeline-label {
+    text-align: left;
+    margin-top: 0;
+  }
+}

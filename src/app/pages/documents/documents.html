@@ -1,0 +1,54 @@
+<div class="zt-page">
+  <h1 class="zt-page-title">{{ t('documents.title') }}</h1>
+
+  <!-- Search bar -->
+  <div class="search-box">
+    <span class="material-icons">search</span>
+    <input type="text" [placeholder]="t('documents.search')"
+           [(ngModel)]="searchQuery" (ngModelChange)="applyFilters()">
+  </div>
+
+  <!-- Filter tabs -->
+  <div class="filter-bar">
+    <button class="filter-btn" [class.active]="activeFilter === 'all'" (click)="filterBy('all')">
+      {{ t('documents.all') }} ({{ allDocs.length }})
+    </button>
+    @for (type of docTypes; track type) {
+      <button class="filter-btn" [class.active]="activeFilter === type" (click)="filterBy(type)">
+        {{ docLabel($any(type)) }}
+      </button>
+    }
+  </div>
+
+  <!-- Documents grid -->
+  <div class="doc-grid">
+    @for (doc of filteredDocs; track doc.shipmentId + doc.type) {
+      <div class="doc-card">
+        <div class="doc-card-header">
+          <span class="material-icons doc-type-icon">{{ docIcon(doc.type) }}</span>
+          <div class="doc-type-info">
+            <span class="doc-type-name">{{ docLabel(doc.type) }}</span>
+            <span class="doc-type-ref">{{ doc.shipmentId }}</span>
+          </div>
+        </div>
+
+        <div class="doc-card-route">
+          {{ doc.origin }}
+          <span class="material-icons">arrow_forward</span>
+          {{ doc.destination }}
+        </div>
+
+        <div class="doc-card-actions">
+          <a [routerLink]="['/shipment', doc.shipmentId]" class="doc-action">
+            <span class="material-icons">visibility</span>
+            {{ t('detail.title') }}
+          </a>
+          <button class="doc-action doc-action--primary" (click)="downloadDoc(doc.type)">
+            <span class="material-icons">download</span>
+            {{ t('documents.download') }}
+          </button>
+        </div>
+      </div>
+    }
+  </div>
+</div>

@@ -1,0 +1,233 @@
+.map-page {
+  display: flex;
+  height: calc(100vh - 60px);
+}
+
+.map-container {
+  flex: 1;
+  min-width: 0;
+}
+
+.map-sidebar {
+  width: 340px;
+  background: var(--zt-dark);
+  border-left: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 20px;
+  overflow-y: auto;
+  flex-shrink: 0;
+  color: rgba(255, 255, 255, 0.85);
+
+  .zt-section-title {
+    color: var(--zt-white);
+  }
+}
+
+.sidebar-quote-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 16px;
+  background: var(--zt-yellow);
+  color: var(--zt-dark);
+  font-weight: 600;
+  font-size: 13px;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: all 0.15s;
+
+  .material-icons { font-size: 18px; }
+
+  &:hover {
+    background: var(--zt-yellow-light);
+    text-decoration: none;
+  }
+}
+
+.shipment-card {
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: var(--zt-radius);
+  padding: 16px;
+  margin-bottom: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.shipment-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.shipment-id {
+  font-weight: 700;
+  color: var(--zt-yellow);
+  font-size: 14px;
+}
+
+.shipment-status {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--zt-blue-light);
+  background: rgba(0, 102, 179, 0.2);
+  padding: 3px 10px;
+  border-radius: 12px;
+
+  .material-icons { font-size: 14px; }
+}
+
+.shipment-route {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 8px;
+}
+
+.route-arrow {
+  font-size: 16px;
+  color: var(--zt-yellow);
+}
+
+.shipment-info {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.5);
+  margin-bottom: 12px;
+
+  .material-icons { font-size: 16px; }
+}
+
+.eta-countdown {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(0, 0, 0, 0.25);
+  color: var(--zt-white);
+  padding: 10px 14px;
+  border-radius: 6px;
+  margin-bottom: 12px;
+
+  .material-icons {
+    font-size: 18px;
+    color: var(--zt-yellow);
+  }
+}
+
+.eta-label {
+  font-size: 12px;
+  opacity: 0.8;
+}
+
+.eta-value {
+  font-size: 16px;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  color: var(--zt-yellow);
+  margin-left: auto;
+}
+
+.detail-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--zt-yellow);
+  text-decoration: none;
+  padding: 8px;
+  border-radius: 6px;
+  transition: background 0.15s;
+  border: 1px solid rgba(245, 197, 24, 0.3);
+
+  &:hover {
+    background: rgba(245, 197, 24, 0.12);
+    text-decoration: none;
+    border-color: var(--zt-yellow);
+  }
+
+  .material-icons { font-size: 18px; }
+}
+
+// Truck marker animation
+:host ::ng-deep {
+  .truck-marker {
+    background: transparent !important;
+    border: none !important;
+  }
+
+  .truck-marker-inner {
+    width: 40px;
+    height: 40px;
+    background: var(--zt-blue);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 0 6px rgba(0, 102, 179, 0.3), 0 2px 8px rgba(0, 0, 0, 0.3);
+    animation: pulse 2s ease-in-out infinite;
+    border: 3px solid var(--zt-yellow);
+
+    .material-icons {
+      font-size: 20px;
+      color: #fff;
+    }
+  }
+
+  .custom-marker {
+    background: transparent !important;
+    border: none !important;
+  }
+
+  .leaflet-popup-content-wrapper {
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    box-shadow: 0 0 0 6px rgba(26, 97, 171, 0.4), 0 2px 8px rgba(0, 0, 0, 0.3);
+    transform: scale(1);
+  }
+  50% {
+    box-shadow: 0 0 0 16px rgba(26, 97, 171, 0), 0 2px 8px rgba(0, 0, 0, 0.3);
+    transform: scale(1.08);
+  }
+}
+
+@media (max-width: 768px) {
+  .map-page {
+    flex-direction: column;
+  }
+
+  .map-container {
+    height: 50vh;
+    min-height: 250px;
+  }
+
+  .map-sidebar {
+    width: 100%;
+    border-left: none;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    height: auto;
+    padding: 16px;
+  }
+
+  .shipment-route {
+    flex-wrap: wrap;
+  }
+
+  .eta-countdown {
+    padding: 8px 10px;
+  }
+}

@@ -1,0 +1,158 @@
+.zt-header {
+  background: var(--zt-blue);
+  color: var(--zt-white);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.zt-header-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  padding: 0 24px;
+  height: 60px;
+  gap: 24px;
+}
+
+// Logo badge — white card overlaying the blue toolbar
+.zt-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  flex-shrink: 0;
+  background: var(--zt-white);
+  padding: 8px 20px;
+  border-radius: 0 0 8px 8px;
+  height: 58px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  align-self: flex-start;
+
+  &:hover { text-decoration: none; }
+}
+
+.zt-logo-img {
+  height: 30px;
+  width: auto;
+}
+
+.zt-nav {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex: 1;
+
+  a {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 14px;
+    border-radius: 6px;
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.15s ease;
+
+    .material-icons { font-size: 20px; }
+
+    &:hover {
+      color: var(--zt-white);
+      background: rgba(255, 255, 255, 0.12);
+      text-decoration: none;
+    }
+
+    &.active {
+      color: var(--zt-dark);
+      background: var(--zt-yellow);
+      font-weight: 600;
+    }
+  }
+}
+
+.zt-lang-switcher {
+  display: flex;
+  gap: 2px;
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 6px;
+  padding: 2px;
+  flex-shrink: 0;
+
+  button {
+    background: transparent;
+    border: none;
+    color: rgba(255, 255, 255, 0.7);
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.15s ease;
+
+    &:hover {
+      color: var(--zt-white);
+    }
+
+    &.active {
+      background: var(--zt-yellow);
+      color: var(--zt-dark);
+    }
+  }
+}
+
+.zt-mobile-toggle {
+  display: none;
+  background: transparent;
+  border: none;
+  color: var(--zt-white);
+  cursor: pointer;
+  padding: 4px;
+
+  .material-icons { font-size: 28px; }
+}
+
+@media (max-width: 768px) {
+  .zt-header-inner {
+    padding: 0 16px;
+    flex-wrap: wrap;
+  }
+
+  .zt-logo {
+    height: 56px;
+    margin-top: 4px;
+    padding: 6px 14px;
+  }
+
+  .zt-logo-img {
+    height: 24px;
+  }
+
+  .zt-mobile-toggle {
+    display: block;
+    margin-left: auto;
+  }
+
+  .zt-lang-switcher {
+    order: 2;
+    margin-left: 8px;
+  }
+
+  .zt-nav {
+    display: none;
+    width: 100%;
+    flex-direction: column;
+    padding: 8px 0 16px;
+    gap: 2px;
+    order: 3;
+
+    &.open { display: flex; }
+
+    a {
+      width: 100%;
+      padding: 12px 14px;
+    }
+  }
+}

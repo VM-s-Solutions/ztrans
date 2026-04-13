@@ -1,0 +1,119 @@
+@if (shipment; as s) {
+  <div class="zt-page">
+    <div class="detail-header">
+      <div>
+        <h1 class="zt-page-title">{{ s.id }}</h1>
+        <div class="detail-route">
+          {{ s.origin.city }}, {{ s.origin.country }}
+          <span class="material-icons">arrow_forward</span>
+          {{ s.destination.city }}, {{ s.destination.country }}
+        </div>
+      </div>
+      <div class="detail-header-actions">
+        <app-shipment-status-badge [status]="s.status" />
+        @if (s.status === 'in_transit') {
+          <a routerLink="/map" class="map-link">
+            <span class="material-icons">map</span>
+            {{ t('detail.view_on_map') }}
+          </a>
+        }
+      </div>
+    </div>
+
+    <!-- Timeline -->
+    <div class="zt-card timeline-card">
+      <h2 class="zt-section-title">{{ t('detail.timeline') }}</h2>
+      <div class="timeline">
+        @for (step of timelineSteps; track step.label; let i = $index; let last = $last) {
+          <div class="timeline-step" [class.done]="step.done" [class.active]="step.done && !last">
+            <div class="timeline-dot">
+              <span class="material-icons">{{ step.icon }}</span>
+            </div>
+            @if (!last) {
+              <div class="timeline-line"></div>
+            }
+            <div class="timeline-label">
+              <span class="step-name">{{ step.label }}</span>
+              @if (step.date) {
+                <span class="step-date">{{ step.date | date:'MMM d, y HH:mm' }}</span>
+              }
+            </div>
+          </div>
+        }
+      </div>
+    </div>
+
+    <div class="detail-grid">
+      <!-- Shipment info -->
+      <div class="zt-card">
+        <h2 class="zt-section-title">{{ t('detail.title') }}</h2>
+        <div class="info-grid">
+          <div class="info-item">
+            <span class="info-label">{{ t('detail.origin') }}</span>
+            <span class="info-value">{{ s.origin.city }}, {{ s.origin.country }}</span>
+          </div>
+          <div class="info-item">
+            <span class="info-label">{{ t('detail.destination') }}</span>
+            <span class="info-value">{{ s.destination.city }}, {{ s.destination.country }}</span>
+          </div>
+          <div class="info-item">
+            <span class="info-label">{{ t('detail.driver') }}</span>
+            <span class="info-value">{{ s.driver }}</span>
+          </div>
+          <div class="info-item">
+            <span class="info-label">{{ t('detail.truck') }}</span>
+            <span class="info-value">{{ s.truck }}</span>
+          </div>
+          <div class="info-item">
+            <span class="info-label">{{ t('detail.cargo') }}</span>
+            <span class="info-value">{{ s.cargo }}</span>
+          </div>
+          <div class="info-item">
+            <span class="info-label">{{ t('detail.weight') }}</span>
+            <span class="info-value">{{ s.weight }}</span>
+          </div>
+          <div class="info-item">
+            <span class="info-label">{{ t('detail.departed') }}</span>
+            <span class="info-value">{{ s.departedAt | date:'MMM d, y HH:mm' }}</span>
+          </div>
+          @if (s.eta) {
+            <div class="info-item">
+              <span class="info-label">{{ t('detail.eta') }}</span>
+              <span class="info-value eta-value">{{ s.eta | date:'MMM d, y HH:mm' }}</span>
+            </div>
+          }
+          @if (s.deliveredAt) {
+            <div class="info-item">
+              <span class="info-label">{{ t('detail.delivered_at') }}</span>
+              <span class="info-value delivered-value">{{ s.deliveredAt | date:'MMM d, y HH:mm' }}</span>
+            </div>
+          }
+        </div>
+      </div>
+
+      <!-- Documents -->
+      <div class="zt-card">
+        <h2 class="zt-section-title">{{ t('detail.documents') }}</h2>
+        <div class="doc-list">
+          @for (doc of s.documents; track doc) {
+            <div class="doc-item">
+              <span class="material-icons doc-icon">{{ docIcon(doc) }}</span>
+              <div class="doc-info">
+                <span class="doc-name">{{ docLabel(doc) }}</span>
+                <span class="doc-ref">{{ s.id }}-{{ doc }}</span>
+              </div>
+              <button class="doc-download" (click)="downloadDoc(doc)">
+                <span class="material-icons">download</span>
+              </button>
+            </div>
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+} @else {
+  <div class="zt-page">
+    <p>{{ t('detail.not_found') }}</p>
+    <a routerLink="/dashboard">{{ t('detail.back') }}</a>
+  </div>
+}

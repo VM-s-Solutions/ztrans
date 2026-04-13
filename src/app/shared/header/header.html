@@ -1,0 +1,36 @@
+<header class="zt-header">
+  <div class="zt-header-inner">
+    <a routerLink="/dashboard" class="zt-logo">
+      <img src="assets/logos/logo.svg" alt="Ztrans" class="zt-logo-img" />
+    </a>
+
+    <button class="zt-mobile-toggle" (click)="toggleMobileMenu()" aria-label="Menu">
+      <span class="material-icons">{{ mobileMenuOpen ? 'close' : 'menu' }}</span>
+    </button>
+
+    <nav class="zt-nav" [class.open]="mobileMenuOpen">
+      <a routerLink="/dashboard" routerLinkActive="active" (click)="mobileMenuOpen = false">
+        <span class="material-icons">dashboard</span>
+        {{ t('nav.dashboard') }}
+      </a>
+      <a routerLink="/map" routerLinkActive="active" (click)="mobileMenuOpen = false">
+        <span class="material-icons">map</span>
+        {{ t('nav.map') }}
+      </a>
+      <a routerLink="/history" routerLinkActive="active" (click)="mobileMenuOpen = false">
+        <span class="material-icons">history</span>
+        {{ t('nav.history') }}
+      </a>
+      <a routerLink="/documents" routerLinkActive="active" (click)="mobileMenuOpen = false">
+        <span class="material-icons">description</span>
+        {{ t('nav.documents') }}
+      </a>
+    </nav>
+
+    <div class="zt-lang-switcher">
+      <button [class.active]="lang === 'sk'" (click)="setLang('sk')">SK</button>
+      <button [class.active]="lang === 'fr'" (click)="setLang('fr')">FR</button>
+      <button [class.active]="lang === 'en'" (click)="setLang('en')">EN</button>
+    </div>
+  </div>
+</header>
